@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:grocify/core/utils/app_colors.dart';
+import 'package:grocify/features/splash/presentation/views/widgets/splash_view_body.dart';
+
+class SplashView extends StatelessWidget {
+  const SplashView({super.key});
+
+  static const String routeName = '/splash';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.splashBackground,
+      body: const SplashViewBody(),
+    );
+  }
+}
