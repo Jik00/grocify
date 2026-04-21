@@ -53,16 +53,53 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Fresh groceries to your doorsteps!`
+  String get onboarding1Title {
+    return Intl.message(
+      'Fresh groceries to your doorsteps!',
+      name: 'onboarding1Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.`
+  String get onboarding1Subtitle {
+    return Intl.message(
+      'Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.',
+      name: 'onboarding1Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fast Shipment to your home!`
+  String get onboarding2Title {
+    return Intl.message(
+      'Fast Shipment to your home!',
+      name: 'onboarding2Title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Find your favorite items with detailed descriptions,nutritional information, and customer reviews.`
+  String get onboarding2Subtitle {
+    return Intl.message(
+      'Find your favorite items with detailed descriptions,nutritional information, and customer reviews.',
+      name: 'onboarding2Subtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override

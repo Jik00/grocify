@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocify/features/auth/presentation/views/login_view.dart';
 import 'package:grocify/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:grocify/features/splash/presentation/views/splash_view.dart';
 
@@ -17,11 +18,11 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         settings: settings,
       );
 
-    // case LoginView.routeName:
-    //   return MaterialPageRoute(
-    //     builder: (_) => const LoginView(),
-    //     settings: settings,
-    //   );
+    case LoginView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const LoginView(),
+        settings: settings,
+      );
 
     // case MainLayout.routeName:
     //   return MaterialPageRoute(
