@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/utils/constants.dart';
 
 class PgViewItem extends StatelessWidget {
   const PgViewItem({
@@ -25,14 +26,17 @@ class PgViewItem extends StatelessWidget {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
-            width: double.maxFinite,
-            height: 387.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40.r),
-                topRight: Radius.circular(40.r),
+          child: Hero(
+            tag: kWhiteRec,
+            child: Container(
+              width: double.maxFinite,
+              height: 387.h,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(40.r),
+                  topRight: Radius.circular(40.r),
+                ),
               ),
             ),
           ),

@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocify/core/helper_functions/ongenerate_routes.dart';
+import 'package:grocify/core/services/custom_bloc_observer.dart';
+import 'package:grocify/core/services/get_it_service.dart';
 import 'package:grocify/core/services/shared_preferences_singleton.dart';
 import 'package:grocify/core/utils/app_colors.dart';
+import 'package:grocify/core/utils/constants.dart';
 import 'package:grocify/features/splash/presentation/views/splash_view.dart';
 import 'package:grocify/generated/l10n.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   
   WidgetsFlutterBinding.ensureInitialized();
+  
+  await Supabase.initialize(
+  url: kSupabaseUrl,
+  anonKey: kSupabaseAnonKey,
+  );
+  
   await Prefs.init();
+  setupGetIt();
+  Bloc.observer = CustomBlocObserver();
 
   runApp(const MyApp());
 }

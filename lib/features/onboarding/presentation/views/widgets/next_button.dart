@@ -27,7 +27,7 @@ class NextButton extends StatelessWidget {
         padding: EdgeInsets.all(6.sp),
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors.onboarding1,
+            color: AppColors.onboardingGreen,
             borderRadius: BorderRadius.circular(44.r),
           ),
           child: Center(

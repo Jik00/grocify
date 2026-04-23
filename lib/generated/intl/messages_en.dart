@@ -22,6 +22,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "acceptTerms": MessageLookupByLibrary.simpleMessage(
+      "You must accept the terms and conditions to create an account",
+    ),
+    "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "email": MessageLookupByLibrary.simpleMessage("E-mail"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "haveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? ",
+    ),
+    "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginTitle": MessageLookupByLibrary.simpleMessage("Log In"),
+    "loginWithApple": MessageLookupByLibrary.simpleMessage("Login with Apple"),
+    "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
+      "Login with Facebook",
+    ),
+    "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "Login with Google",
+    ),
+    "makingAnAccount": MessageLookupByLibrary.simpleMessage(
+      " By creating an account, you agree to our ",
+    ),
+    "noAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? ",
+    ),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.",
     ),
@@ -33,6 +58,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "onboarding2Title": MessageLookupByLibrary.simpleMessage(
       "Fast Shipment to your home!",
+    ),
+    "or": MessageLookupByLibrary.simpleMessage("or"),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "requiredField": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "termsAndConditions": MessageLookupByLibrary.simpleMessage(
+      "Terms & Conditions",
     ),
   };
 }
