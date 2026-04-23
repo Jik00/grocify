@@ -80,7 +80,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               onTap: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-    
+
                   context.read<SignInCubit>().signInWithEmailAndPassword(
                       email: email, password: password);
                 } else {

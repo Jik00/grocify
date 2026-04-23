@@ -5,6 +5,8 @@ const String kAppLanguage = 'app_language'; // store selected language
 /// Hero Tag ///
 const String kWhiteRec = 'white_rectangle';
 
+/// lottie ///
+const String kLoadingLottie = 'assets/lottie/LoadingFruits.json'; 
 
 /// supa ///
 const String kSupabaseUrl = 'https://chqxegpmpbzillazikzj.supabase.co';

@@ -6,3 +6,7 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.message);
 }
+
+class CustomException extends Failure {
+  CustomException(super.message);
+}

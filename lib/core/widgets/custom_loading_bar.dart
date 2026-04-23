@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/utils/constants.dart';
 import 'package:lottie/lottie.dart';
 
 class CustomLoadingBar extends StatelessWidget {
@@ -9,7 +10,7 @@ class CustomLoadingBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: LottieBuilder.asset(
-        'assets/animation/LoadingFruits.json',
+        kLoadingLottie,
         width: 250.w,
         height: 250.h,
         repeat: true,

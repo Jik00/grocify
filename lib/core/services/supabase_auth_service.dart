@@ -20,7 +20,7 @@ class SupabaseAuthService {
       return user;
     } on Exception catch (e) {
       log('Error in SupabaseAuthService.signUpWithEmail: ${e.toString()}');
-      throw Exception('فشل في انشاء الحساب.');
+      throw Exception(e.toString().split(':').last.trim());
     }
   }
 
@@ -35,9 +35,9 @@ class SupabaseAuthService {
 
       final User user = res.user!;
       return user;
-    } on Exception catch (e) {
+    } on AuthException catch (e) {
       log('Error in SupabaseAuthService.signInWithEmail: ${e.toString()}');
-      throw Exception('فشل في تسجيل الدخول.');
+      throw Exception(e.code);
     }
   }
 
@@ -48,9 +48,9 @@ class SupabaseAuthService {
         scopes : 'openid email profile',
       );
      
-    } on Exception catch (e) {
-      log('Error in SupabaseAuthService.signInWithGoogle: ${e.toString()}');
-      throw Exception('فشل في تسجيل الدخول باستخدام جوجل.');
+    } on AuthException catch (e) {
+      log('Error in SupabaseAuthService.signInWithEmail: ${e.toString()}');
+      throw Exception(e.code);
     }
   }
 
@@ -61,9 +61,9 @@ class SupabaseAuthService {
         scopes : 'openid email profile',
       );
      
-    } on Exception catch (e) {
-      log('Error in SupabaseAuthService.signInWithFacebook: ${e.toString()}');
-      throw Exception('فشل في تسجيل الدخول باستخدام فيسبوك.');
+    } on AuthException catch (e) {
+      log('Error in SupabaseAuthService.signInWithEmail: ${e.toString()}');
+      throw Exception(e.code);
     }
   }
 

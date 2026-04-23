@@ -26,11 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
       "You must accept the terms and conditions to create an account",
     ),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "defaultAuthError": MessageLookupByLibrary.simpleMessage(
+      "Failed to Login.",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "An account already exists with this email.",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
+    ),
+    "invalidCredential": MessageLookupByLibrary.simpleMessage(
+      "Incorrect email or password.",
+    ),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "The email address is not valid.",
     ),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Log In"),
@@ -43,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "makingAnAccount": MessageLookupByLibrary.simpleMessage(
       " By creating an account, you agree to our ",
+    ),
+    "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "No internet connection.",
     ),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
@@ -67,6 +82,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "No account found with this email.",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "The password provided is too weak.",
+    ),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage(
+      "Incorrect email or password.",
     ),
   };
 }

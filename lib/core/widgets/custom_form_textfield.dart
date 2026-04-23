@@ -29,6 +29,12 @@ class CustomFormTextfield extends StatelessWidget {
         if (value == null || value.isEmpty) {
           return context.loc.requiredField;
         }
+        if (textInputType == TextInputType.emailAddress) {
+          final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+          if (!emailRegex.hasMatch(value)) {
+            return context.loc.invalidEmail;
+          }
+        }
         return null;
       },
       keyboardType: textInputType,

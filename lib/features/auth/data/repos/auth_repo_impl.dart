@@ -1,7 +1,8 @@
 import 'dart:developer';
 import 'package:dartz/dartz.dart';
-import 'package:grocify/core/errors/cutoms_exception.dart';
+import 'package:flutter/material.dart';
 import 'package:grocify/core/errors/failures.dart';
+import 'package:grocify/core/helper_functions/friendly_auth_errors.dart';
 import 'package:grocify/features/auth/data/models/user_model.dart';
 import 'package:grocify/features/auth/domain/entities/user_entity.dart';
 import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
@@ -27,12 +28,10 @@ class AuthRepoImpl extends AuthRepo {
 
       return Right(UserModel.fromSupabaseUser(user));
 
-    } on CustomException catch (e) {
-      return Left(ServerFailure(e.message));
     } catch (e) {
       log('Error in AuthRepoImpl.createUserWithEmail: $e');
       return Left(
-        ServerFailure('just in case we added more logic in the future'),
+        handleAuthErrorMessage( e.toString().split(':').last.trim() ),
       );
     }
   }
@@ -47,12 +46,11 @@ class AuthRepoImpl extends AuthRepo {
 
       return Right(UserModel.fromSupabaseUser(user)); 
 
-    } on CustomException catch (e) {
-      return Left(ServerFailure(e.message));
     } catch (e) {
-      log('Error in AuthRepoImpl.signInWithEmailAndPassword ${e.toString()}');
+      log('Error in AuthRepoImpl.signInWithEmailAndPassword: $e');
+      debugPrint ( e.toString().split(':').last.trim());
       return Left(
-        ServerFailure('just in case we added more logic in the future'),
+        handleAuthErrorMessage( e.toString().split(':').last.trim() ),
       );
     }
   }
@@ -64,12 +62,10 @@ class AuthRepoImpl extends AuthRepo {
 
       return const Right(null);
 
-    } on CustomException catch (e) {
-      return Left(ServerFailure(e.message));
     } catch (e) {
-      log('Error in AuthRepoImpl.signInWithGoogle ${e.toString()}');
+      log('Error in AuthRepoImpl.createUserWithEmail: $e');
       return Left(
-        ServerFailure('just in case we added more logic in the future'),
+        handleAuthErrorMessage( e.toString().split(':').last.trim() ),
       );
     }
   }
@@ -81,12 +77,10 @@ class AuthRepoImpl extends AuthRepo {
 
       return const Right(null);
 
-    } on CustomException catch (e) {
-      return Left(ServerFailure(e.message));
     } catch (e) {
-      log('Error in AuthRepoImpl.signInWithGoogle ${e.toString()}');
+      log('Error in AuthRepoImpl.createUserWithEmail: $e');
       return Left(
-        ServerFailure('just in case we added more logic in the future'),
+        handleAuthErrorMessage( e.toString().split(':').last.trim() ),
       );
     }
   }

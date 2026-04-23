@@ -1,9 +1,9 @@
 {
-    "onboarding1Title": "Fresh groceries to your doorsteps!",
-    "onboarding1Subtitle": "Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.",
-    "onboarding2Title": "Fast Shipment to your home!",
-    "onboarding2Subtitle": "Find your favorite items with detailed descriptions,nutritional information, and customer reviews.",
-    "loginTitle": "Log In",
+  "onboarding1Title": "Fresh groceries to your doorsteps!",
+  "onboarding1Subtitle": "Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.",
+  "onboarding2Title": "Fast Shipment to your home!",
+  "onboarding2Subtitle": "Find your favorite items with detailed descriptions,nutritional information, and customer reviews.",
+  "loginTitle": "Log In",
   "email": "E-mail",
   "password": "Password",
   "forgotPassword": "Forgot Password?",
@@ -20,6 +20,14 @@
   "makingAnAccount":" By creating an account, you agree to our ",
   "termsAndConditions": "Terms & Conditions",
   "requiredField": "This field is required",
-  "acceptTerms": "You must accept the terms and conditions to create an account"
+  "acceptTerms": "You must accept the terms and conditions to create an account",
+  "weakPassword": "The password provided is too weak.",
+  "networkRequestFailed": "No internet connection.",
+  "emailAlreadyInUse": "An account already exists with this email.",
+  "invalidEmail": "The email address is not valid.",
+  "invalidCredential": "Incorrect email or password.",
+  "userNotFound": "No account found with this email.",
+  "wrongPassword": "Incorrect email or password.",
+  "defaultAuthError": "Failed to Login."
     
 }

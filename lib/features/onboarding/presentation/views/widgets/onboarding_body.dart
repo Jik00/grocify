@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/features/auth/presentation/views/signin_view.dart';
-import 'package:grocify/features/auth/presentation/views/signup_view.dart';
 import 'package:grocify/features/onboarding/presentation/views/widgets/next_button.dart';
 import 'package:grocify/features/onboarding/presentation/views/widgets/onboarding_pgview.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
