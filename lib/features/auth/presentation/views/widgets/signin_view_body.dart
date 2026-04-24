@@ -7,7 +7,7 @@ import 'package:grocify/core/utils/context_extensions.dart';
 import 'package:grocify/core/widgets/custom_button.dart';
 import 'package:grocify/core/widgets/custom_form_textfield.dart';
 import 'package:grocify/core/widgets/password_field.dart';
-import 'package:grocify/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
+import 'package:grocify/features/auth/presentation/manger/signin_cubit/signin_cubit.dart';
 import 'package:grocify/features/auth/presentation/views/signup_view.dart';
 import 'package:grocify/features/auth/presentation/views/widgets/signin_with_listtile.dart';
 import 'package:grocify/features/auth/presentation/views/widgets/no_account_widget.dart';

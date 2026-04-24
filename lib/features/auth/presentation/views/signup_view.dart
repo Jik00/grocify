@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocify/core/services/get_it_service.dart';
 import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
-import 'package:grocify/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
+import 'package:grocify/features/auth/presentation/manger/signup_cubit/signup_cubit.dart';
 import 'package:grocify/features/auth/presentation/views/widgets/signup_view_body_bloc_consumer.dart';
 
 class SignupView extends StatelessWidget {

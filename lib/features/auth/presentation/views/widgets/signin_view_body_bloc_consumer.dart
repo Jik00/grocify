@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/core/widgets/build_error_snack_bar.dart';
 import 'package:grocify/core/widgets/custom_loading_bar.dart';
 import 'package:grocify/features/auth/presentation/views/widgets/customized_ui.dart';
 import 'package:grocify/features/auth/presentation/views/widgets/signin_view_body.dart';
+import 'package:grocify/features/home/presentation/views/main_layout.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import '../../cubits/signin_cubit/signin_cubit.dart';
+import '../../manger/signin_cubit/signin_cubit.dart';
 
 class SigninViewBodyBlocConsumer extends StatelessWidget {
   const SigninViewBodyBlocConsumer({super.key});
@@ -15,7 +17,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInSuccess) {
-          
+          NavigationService.navigateToGlobal( MainLayout.routeName);
         }
         if (state is SignInFailure) {
           buildErrorSnackBar(context, state.message);

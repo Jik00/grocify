@@ -46,6 +46,7 @@ class SupabaseAuthService {
       await supabase.auth.signInWithOAuth(
         OAuthProvider.google,
         scopes : 'openid email profile',
+        redirectTo: 'com.example.grocify://login-callback',
       );
      
     } on AuthException catch (e) {

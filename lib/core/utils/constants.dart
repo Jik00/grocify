@@ -6,7 +6,7 @@ const String kAppLanguage = 'app_language'; // store selected language
 const String kWhiteRec = 'white_rectangle';
 
 /// lottie ///
-const String kLoadingLottie = 'assets/lottie/LoadingFruits.json'; 
+const String kLoadingLottie = 'assets/images/lottie/LoadingFruits.json'; 
 
 /// supa ///
 const String kSupabaseUrl = 'https://chqxegpmpbzillazikzj.supabase.co';
