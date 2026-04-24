@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/services/get_it_service.dart';
 import 'package:grocify/core/utils/app_images.dart';
-import 'package:grocify/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
+import 'package:grocify/features/splash/presentation/manager/splash_nav_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -23,7 +25,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _fade = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
     _controller.forward();
 
-    _scheduleNavigation();
+    _navigateAfterSplash();
   }
 
   @override
@@ -63,30 +65,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
-    void _scheduleNavigation() {
+  Future<void> _navigateAfterSplash() async {
 
-    // bool isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
-    final navigator = Navigator.of(context);
+    final manager = SplashNavManager(getIt<AuthRepo>());
     
-    Future.delayed(
-      const Duration(seconds: 4),
-      () {
-
-        navigator.pushReplacementNamed(OnboardingView.routeName);
-
-        // if (mounted) {
-        //   if (isOnboardingSeen) {
-        //     Navigator.pushReplacementNamed(context, LoginView.routeName);
-        //     //navigator.pushReplacementNamed(ErasView.routeName);
-        //     //navigator.pushReplacementNamed(ChatbotView.routeName);
-        //    // navigator.pushReplacementNamed(MainLayout.routeName);
-
-        //   } else {
-        //     navigator.pushReplacementNamed(OnboardingView.routeName);
-        //   }
-        // }
-      },
-    );
+    final nextRoute = await manager.determineNextRoute();
+    
+    if (mounted) {
+      Navigator.pushReplacementNamed(context, nextRoute);
+    }
   }
 
 
