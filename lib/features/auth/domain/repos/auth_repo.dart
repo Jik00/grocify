@@ -14,4 +14,6 @@ abstract class AuthRepo {
   Future<Either<Failure, void>> signInWithFacebook();
 
   Stream<UserEntity?> authStateChanges();
+
+  Future<UserEntity?> getCurrentUser();
 }

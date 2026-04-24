@@ -96,4 +96,12 @@ class AuthRepoImpl extends AuthRepo {
     });
   }
 
+
+  @override
+  Future<UserEntity?> getCurrentUser() async {
+    final session = supabase.auth.currentSession;
+    if (session == null) return null;
+    return UserModel.fromSupabaseUser(session.user);
+  }
+
 }
