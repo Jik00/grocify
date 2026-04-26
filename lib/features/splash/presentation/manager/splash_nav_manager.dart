@@ -10,14 +10,11 @@ import 'package:grocify/features/onboarding/presentation/views/onboarding_view.d
 class SplashNavManager {
   final AuthRepo _authRepo;
 
-
   static const minDisplayDuration = Duration(seconds: 4);
 
   SplashNavManager(this._authRepo);
 
-
   Future<String> determineNextRoute() async {
-    // Ensure minimum splash duration
     await Future.delayed(minDisplayDuration);
 
     final isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
@@ -26,20 +23,20 @@ class SplashNavManager {
       return OnboardingView.routeName;
     }
 
-    // Check current auth state from repo
     final currentUser = await _authRepo.getCurrentUser();
     final isAuthenticated = currentUser != null;
 
     if (isAuthenticated) {
+      // ✅ Profile will be loaded automatically by AuthController
+      // AuthController listens to auth changes and fetches profile
       return MainLayout.routeName;
     }
 
     return SignInView.routeName;
   }
-
 }
 
 extension SplashNavigationManagerExtension on BuildContext {
   SplashNavManager get splashNavigationManager =>
-      SplashNavManager(read<AuthRepo>());
+      SplashNavManager(read<AuthRepo>());     
 }
