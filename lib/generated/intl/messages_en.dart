@@ -25,7 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptTerms": MessageLookupByLibrary.simpleMessage(
       "You must accept the terms and conditions to create an account",
     ),
+    "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
     ),
@@ -33,17 +35,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists with this email.",
     ),
+    "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalidCredential": MessageLookupByLibrary.simpleMessage(
       "Incorrect email or password.",
     ),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "The email address is not valid.",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "light": MessageLookupByLibrary.simpleMessage("Light"),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("Log In"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage("Login with Apple"),
@@ -53,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "Login with Google",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "makingAnAccount": MessageLookupByLibrary.simpleMessage(
       " By creating an account, you agree to our ",
     ),
@@ -76,13 +83,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "products": MessageLookupByLibrary.simpleMessage("Products"),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "requiredField": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "system": MessageLookupByLibrary.simpleMessage("System"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",
     ),
+    "theme": MessageLookupByLibrary.simpleMessage("Theme"),
     "userNotFound": MessageLookupByLibrary.simpleMessage(
       "No account found with this email.",
     ),

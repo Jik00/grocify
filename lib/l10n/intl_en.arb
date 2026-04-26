@@ -28,6 +28,18 @@
   "invalidCredential": "Incorrect email or password.",
   "userNotFound": "No account found with this email.",
   "wrongPassword": "Incorrect email or password.",
-  "defaultAuthError": "Failed to Login."
+  "defaultAuthError": "Failed to Login.",
+  "home": "Home",
+  "fav": "Favorites",
+  "cart": "Cart",
+  "products": "Products",
+  "profile": "Profile",
+  "logout": "Logout",
+  "settings": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light",
+  "system": "System"
     
 }
