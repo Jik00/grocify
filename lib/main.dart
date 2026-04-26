@@ -9,8 +9,10 @@ import 'package:grocify/core/services/get_it_service.dart';
 import 'package:grocify/core/services/shared_preferences_singleton.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/utils/constants.dart';
+import 'package:grocify/features/profile/domain/entities/profile_entity.dart';
 import 'package:grocify/features/splash/presentation/views/splash_view.dart';
 import 'package:grocify/generated/l10n.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
@@ -21,6 +23,9 @@ void main() async {
   url: kSupabaseUrl,
   anonKey: kSupabaseAnonKey,
   );
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProfileEntityAdapter());
   
   await Prefs.init();
   setupGetIt();
