@@ -12,35 +12,37 @@ class ActiveItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: EdgeInsets.only(left: 16.w),
+        padding: EdgeInsets.symmetric(vertical: 6.h),
         decoration: ShapeDecoration(
           color: const Color(0xFFEEEEEE),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.r),
+            borderRadius: BorderRadius.circular(20.r),
           ),
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              width: 30.w,
-              height: 30.h,
+              width: 35.w,
+              height: 35.h,
               decoration: ShapeDecoration(
                 color: AppColors.navBarGreenon,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.r),
                 ),
               ),
-              child: Center(child: SvgPicture.asset(image)),
-            ),
-           SizedBox(
-              width: 4.w,
+              child: Center(
+                  child: SvgPicture.asset(image, width: 18.w, height: 18.h)),
             ),
             Text(
               text,
               style: TextStyle(
-                  color: AppColors.primary, fontWeight: FontWeight.bold, fontSize: 14.sp),
-            )
+                color: AppColors.navBarGreenon,
+                fontWeight: FontWeight.bold,
+                fontSize: 14.sp,
+              ),
+            ),
+            SizedBox(width: 2.w),
           ],
         ),
       ),

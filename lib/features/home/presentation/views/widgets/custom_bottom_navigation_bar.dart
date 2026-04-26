@@ -17,15 +17,14 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 375.w,
-      height: 70.h,
+      width: double.maxFinite,
+      height: 60.h,
+      margin: EdgeInsets.only(bottom: 8.h, left: 8.w, right: 8.w),
+      padding: EdgeInsets.symmetric(horizontal: 4.w),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.r),
-            topRight: Radius.circular(30.r),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(24.r)),
         ),
         shadows: [
           BoxShadow(

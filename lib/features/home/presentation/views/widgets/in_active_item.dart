@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class InActiveItem extends StatelessWidget {
@@ -9,7 +10,7 @@ class InActiveItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      child: SvgPicture.asset(image),
+      child: SvgPicture.asset(image, width: 24.w, height: 24.h),
     );
   }
 }
