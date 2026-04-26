@@ -4,6 +4,7 @@ abstract class AppColors {
   static const splashBackground = Color(0xFFCADEC2);
   static const primary = Color(0xFF4CAF50);
   static const onboardingGreen = Color(0xFF29641E);
+  static const navBarGreenon =  Color(0xFF1B5E37);
   static const onboarding2 = Color(0xFFD9D9D9);
   static const darkRedForErrorcolor = Color(0xFF7D0A0A);
   static const textColor = Color(0xFF4E5556);
