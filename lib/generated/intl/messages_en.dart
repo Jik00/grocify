@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
     ),
+    "discount": MessageLookupByLibrary.simpleMessage("Discount"),
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists with this email.",
@@ -38,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "getNow": MessageLookupByLibrary.simpleMessage("Get Now"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
@@ -66,9 +68,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
       "No internet connection.",
     ),
+    "newMember": MessageLookupByLibrary.simpleMessage("New Member"),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "off": MessageLookupByLibrary.simpleMessage("40%"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.",
     ),
@@ -88,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "requiredField": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("Search ..."),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "system": MessageLookupByLibrary.simpleMessage("System"),
@@ -101,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weakPassword": MessageLookupByLibrary.simpleMessage(
       "The password provided is too weak.",
     ),
+    "welcome": MessageLookupByLibrary.simpleMessage("Welcome !"),
     "wrongPassword": MessageLookupByLibrary.simpleMessage(
       "Incorrect email or password.",
     ),

@@ -16,17 +16,16 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
-  
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   await Supabase.initialize(
-  url: kSupabaseUrl,
-  anonKey: kSupabaseAnonKey,
+    url: kSupabaseUrl,
+    anonKey: kSupabaseAnonKey,
   );
 
   await Hive.initFlutter();
   Hive.registerAdapter(ProfileEntityAdapter());
-  
+
   await Prefs.init();
   setupGetIt();
   Bloc.observer = CustomBlocObserver();
@@ -40,36 +39,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_, child) {
-        return MaterialApp(
-          theme: ThemeData(
-            colorScheme:
-                ColorScheme.fromSeed(seedColor: AppColors.primary),
-            textTheme: GoogleFonts.alexandriaTextTheme(),
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (_, child) {
+          return MaterialApp(
+            theme: ThemeData(
+              scaffoldBackgroundColor: Colors.white,
+              colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+              textTheme: GoogleFonts.alexandriaTextTheme(),
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
 
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-          ),
+            debugShowCheckedModeBanner: false,
+            // showPerformanceOverlay: false,
+            onGenerateRoute: onGenerateRoutes,
+            initialRoute: SplashView.routeName,
+            // navigatorKey: navigatorKey,
 
-          debugShowCheckedModeBanner: false,
-          // showPerformanceOverlay: false,
-          onGenerateRoute: onGenerateRoutes,
-          initialRoute: SplashView.routeName,
-          // navigatorKey: navigatorKey,
-
-          // flutter localization
-          locale: const Locale('en'),
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-        );
-      }
-    );
+            // flutter localization
+            locale: const Locale('en'),
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+          );
+        });
   }
 }

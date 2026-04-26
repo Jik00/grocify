@@ -40,6 +40,12 @@
   "theme": "Theme",
   "dark": "Dark",
   "light": "Light",
-  "system": "System"
+  "system": "System",
+  "welcome": "Welcome !",
+  "search": "Search ...",
+  "newMember": "New Member",
+  "discount": "Discount",
+  "off": "40%",
+  "getNow": "Get Now"
     
 }

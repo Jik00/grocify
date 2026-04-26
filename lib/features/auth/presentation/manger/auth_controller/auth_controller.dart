@@ -25,6 +25,8 @@ class AuthController extends ChangeNotifier {
     _checkAuthStatusUseCase.execute().listen((status) async {
       _status = status;
 
+      debugPrint('Auth status changed: $_status');
+
       if (status == AuthStatus.authenticated) {
         final currentUser =
             await _checkAuthStatusUseCase.authRepo.getCurrentUser();

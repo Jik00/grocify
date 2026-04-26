@@ -378,6 +378,36 @@ class S {
   String get system {
     return Intl.message('System', name: 'system', desc: '', args: []);
   }
+
+  /// `Welcome !`
+  String get welcome {
+    return Intl.message('Welcome !', name: 'welcome', desc: '', args: []);
+  }
+
+  /// `Search ...`
+  String get search {
+    return Intl.message('Search ...', name: 'search', desc: '', args: []);
+  }
+
+  /// `New Member`
+  String get newMember {
+    return Intl.message('New Member', name: 'newMember', desc: '', args: []);
+  }
+
+  /// `Discount`
+  String get discount {
+    return Intl.message('Discount', name: 'discount', desc: '', args: []);
+  }
+
+  /// `40%`
+  String get off {
+    return Intl.message('40%', name: 'off', desc: '', args: []);
+  }
+
+  /// `Get Now`
+  String get getNow {
+    return Intl.message('Get Now', name: 'getNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

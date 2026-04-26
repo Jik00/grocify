@@ -74,6 +74,18 @@ class Assets {
   /// assets/images/lottie/LoadingFruits.json
   static const String assetsImagesLottieLoadingFruits = "assets/images/lottie/LoadingFruits.json";
 
+  /// Assets for assetsImagesOfferImg1
+  /// assets/images/offer_img1.png
+  static const String assetsImagesOfferImg1 = "assets/images/offer_img1.png";
+
+  /// Assets for assetsImagesOfferImg2
+  /// assets/images/offer_img2.png
+  static const String assetsImagesOfferImg2 = "assets/images/offer_img2.png";
+
+  /// Assets for assetsImagesOfferImg3
+  /// assets/images/offer_img3.png
+  static const String assetsImagesOfferImg3 = "assets/images/offer_img3.png";
+
   /// Assets for assetsImagesOnboarding1
   /// assets/images/onboarding1.png
   static const String assetsImagesOnboarding1 = "assets/images/onboarding1.png";
