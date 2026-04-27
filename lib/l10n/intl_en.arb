@@ -46,6 +46,17 @@
   "newMember": "New Member",
   "discount": "Discount",
   "off": "40%",
-  "getNow": "Get Now"
+  "getNow": "Get Now",
+  "categories": "Categories",
+  "viewAll": "View All",
+  "fruitsVegetables": "Fruits & Vegetables",
+  "eggCheeseColdcuts": "Egg, Cheese & Cold Cuts",
+  "bakeriesPastries": "Bakeries & Pastries",
+  "beverages": "Beverages",
+  "snacks": "Snacks",
+  "frozen": "Frozen",
+  "houseCleaning": "House Cleaning",
+  "beuty": "Beauty",
+  "petsSupplies": "Pets Supplies"
     
 }

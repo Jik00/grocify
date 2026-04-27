@@ -8,33 +8,26 @@ class DiscountList extends StatelessWidget {
   const DiscountList({super.key});
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric (horizontal: 16.w),
-            child: OfferContainer(
-              color: AppColors.container1,
-              img: Assets.assetsImagesOfferImg1,
-            ),
+          OfferContainer(
+            color: AppColors.container1,
+            img: Assets.assetsImagesOfferImg1,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric (horizontal: 16.w),
-            child: OfferContainer(
-              color: AppColors.container2,
-              img: Assets.assetsImagesOfferImg2,
-            ),
+          SizedBox(width: 10.w),
+          OfferContainer(
+            color: AppColors.container2,
+            img: Assets.assetsImagesOfferImg2,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric (horizontal: 16.w),
-            child: OfferContainer(
-              color: AppColors.container3,
-              img: Assets.assetsImagesOfferImg3,
-            ),
+          SizedBox(width: 10.w),
+          OfferContainer(
+            color: AppColors.container3,
+            img: Assets.assetsImagesOfferImg3,
           ),
-
         ],
       ),
     );

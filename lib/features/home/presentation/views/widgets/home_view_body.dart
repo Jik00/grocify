@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/widgets/search_text_field.dart';
+import 'package:grocify/features/home/presentation/views/widgets/categories_row.dart';
+import 'package:grocify/features/home/presentation/views/widgets/category_grid.dart';
 import 'package:grocify/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:grocify/features/home/presentation/views/widgets/discount_list.dart';
 
@@ -25,7 +27,20 @@ class HomeViewBody extends StatelessWidget {
                   height: 12.h,
                 ),
                 DiscountList(),
+                SizedBox(
+                  height: 12.h,
+                ),
+                CategoriesRow(),
+                SizedBox(
+                  height: 12.h,
+                ),
               ],
+            ),
+          ),
+          CategoryGrid(),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 80.h,
             ),
           ),
         ],

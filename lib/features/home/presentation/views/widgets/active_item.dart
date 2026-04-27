@@ -26,7 +26,7 @@ class ActiveItem extends StatelessWidget {
               width: 35.w,
               height: 35.h,
               decoration: ShapeDecoration(
-                color: AppColors.navBarGreenon,
+                color: AppColors.navBarGreenon.withAlpha(210),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.r),
                 ),
@@ -37,7 +37,7 @@ class ActiveItem extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                color: AppColors.navBarGreenon,
+                color: AppColors.navBarGreenon.withAlpha(210),
                 fontWeight: FontWeight.bold,
                 fontSize: 14.sp,
               ),

@@ -11,13 +11,18 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      height: 40.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(
+          color: AppColors.grayscale400.withAlpha(80),
+        ),
         boxShadow: [
           BoxShadow(
             color: Color(0x0A000000),
-            blurRadius: 9,
-            offset: Offset(0, 2),
-            spreadRadius: 0,
+            blurRadius: 7,
+            offset: Offset(2, 2),
+            spreadRadius: 1,
           )
         ],
       ),
@@ -25,7 +30,7 @@ class SearchTextField extends StatelessWidget {
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           prefixIcon: SizedBox(
-            width: 20,
+            width: 24.w,
             child: Center(
               child: SvgPicture.asset(Assets.assetsImagesIconsSearchIcon),
             ),
@@ -38,8 +43,8 @@ class SearchTextField extends StatelessWidget {
               ),
             ),
           ),
-          hintStyle:TextStyle(
-            fontSize: 14,
+          hintStyle: TextStyle(
+            fontSize: 14.sp,
             color: AppColors.grayscale400,
           ),
           hintText: context.loc.search,
@@ -55,7 +60,7 @@ class SearchTextField extends StatelessWidget {
 
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(8.r),
       borderSide: const BorderSide(
         width: 1,
         color: Colors.white,

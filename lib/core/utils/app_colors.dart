@@ -16,4 +16,10 @@ abstract class AppColors {
   static const container1 = Color(0xFFC1DBCE);
   static const container2 = Color(0xFFFDC8BA);
   static const container3 = Color(0xFFD9ECFF);
+  static const container4 = Color(0xFFBDDBFB);
+  static const container5 = Color(0xFF95B9DF);
+  static const container6 = Color(0xFFE6FCE4);
+  static const container7 = Color(0xFFE7BEE0);
+  static const container8 = Color(0xFFF4F3E3);
+  static const container9 = Color(0xFFECECEC); 
 }

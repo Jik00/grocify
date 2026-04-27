@@ -6,6 +6,42 @@ class Assets {
   /// assets/images/app_icon.png
   static const String assetsImagesAppIcon = "assets/images/app_icon.png";
 
+  /// Assets for assetsImagesCat1
+  /// assets/images/cat1.png
+  static const String assetsImagesCat1 = "assets/images/cat1.png";
+
+  /// Assets for assetsImagesCat2
+  /// assets/images/cat2.png
+  static const String assetsImagesCat2 = "assets/images/cat2.png";
+
+  /// Assets for assetsImagesCat3
+  /// assets/images/cat3.png
+  static const String assetsImagesCat3 = "assets/images/cat3.png";
+
+  /// Assets for assetsImagesCat4
+  /// assets/images/cat4.png
+  static const String assetsImagesCat4 = "assets/images/cat4.png";
+
+  /// Assets for assetsImagesCat5
+  /// assets/images/cat5.png
+  static const String assetsImagesCat5 = "assets/images/cat5.png";
+
+  /// Assets for assetsImagesCat6
+  /// assets/images/cat6.png
+  static const String assetsImagesCat6 = "assets/images/cat6.png";
+
+  /// Assets for assetsImagesCat7
+  /// assets/images/cat7.png
+  static const String assetsImagesCat7 = "assets/images/cat7.png";
+
+  /// Assets for assetsImagesCat8
+  /// assets/images/cat8.png
+  static const String assetsImagesCat8 = "assets/images/cat8.png";
+
+  /// Assets for assetsImagesCat9
+  /// assets/images/cat9.png
+  static const String assetsImagesCat9 = "assets/images/cat9.png";
+
   /// Assets for assetsImagesIconsCartBold
   /// assets/images/icons/cart_bold.svg
   static const String assetsImagesIconsCartBold = "assets/images/icons/cart_bold.svg";
@@ -97,5 +133,9 @@ class Assets {
   /// Assets for assetsImagesSplashBottom
   /// assets/images/splash_bottom.png
   static const String assetsImagesSplashBottom = "assets/images/splash_bottom.png";
+
+  /// Assets for assetsImagesWatermelon
+  /// assets/images/watermelon.png
+  static const String assetsImagesWatermelon = "assets/images/watermelon.png";
 }
 

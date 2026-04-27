@@ -408,6 +408,86 @@ class S {
   String get getNow {
     return Intl.message('Get Now', name: 'getNow', desc: '', args: []);
   }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message('Categories', name: 'categories', desc: '', args: []);
+  }
+
+  /// `View All`
+  String get viewAll {
+    return Intl.message('View All', name: 'viewAll', desc: '', args: []);
+  }
+
+  /// `Fruits & Vegetables`
+  String get fruitsVegetables {
+    return Intl.message(
+      'Fruits & Vegetables',
+      name: 'fruitsVegetables',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Egg, Cheese & Cold Cuts`
+  String get eggCheeseColdcuts {
+    return Intl.message(
+      'Egg, Cheese & Cold Cuts',
+      name: 'eggCheeseColdcuts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bakeries & Pastries`
+  String get bakeriesPastries {
+    return Intl.message(
+      'Bakeries & Pastries',
+      name: 'bakeriesPastries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beverages`
+  String get beverages {
+    return Intl.message('Beverages', name: 'beverages', desc: '', args: []);
+  }
+
+  /// `Snacks`
+  String get snacks {
+    return Intl.message('Snacks', name: 'snacks', desc: '', args: []);
+  }
+
+  /// `Frozen`
+  String get frozen {
+    return Intl.message('Frozen', name: 'frozen', desc: '', args: []);
+  }
+
+  /// `House Cleaning`
+  String get houseCleaning {
+    return Intl.message(
+      'House Cleaning',
+      name: 'houseCleaning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beauty`
+  String get beuty {
+    return Intl.message('Beauty', name: 'beuty', desc: '', args: []);
+  }
+
+  /// `Pets Supplies`
+  String get petsSupplies {
+    return Intl.message(
+      'Pets Supplies',
+      name: 'petsSupplies',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

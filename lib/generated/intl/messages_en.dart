@@ -25,25 +25,39 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptTerms": MessageLookupByLibrary.simpleMessage(
       "You must accept the terms and conditions to create an account",
     ),
+    "bakeriesPastries": MessageLookupByLibrary.simpleMessage(
+      "Bakeries & Pastries",
+    ),
+    "beuty": MessageLookupByLibrary.simpleMessage("Beauty"),
+    "beverages": MessageLookupByLibrary.simpleMessage("Beverages"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
     ),
     "discount": MessageLookupByLibrary.simpleMessage("Discount"),
+    "eggCheeseColdcuts": MessageLookupByLibrary.simpleMessage(
+      "Egg, Cheese & Cold Cuts",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists with this email.",
     ),
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "frozen": MessageLookupByLibrary.simpleMessage("Frozen"),
+    "fruitsVegetables": MessageLookupByLibrary.simpleMessage(
+      "Fruits & Vegetables",
+    ),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "getNow": MessageLookupByLibrary.simpleMessage("Get Now"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "houseCleaning": MessageLookupByLibrary.simpleMessage("House Cleaning"),
     "invalidCredential": MessageLookupByLibrary.simpleMessage(
       "Incorrect email or password.",
     ),
@@ -87,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "petsSupplies": MessageLookupByLibrary.simpleMessage("Pets Supplies"),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "requiredField": MessageLookupByLibrary.simpleMessage(
@@ -95,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search": MessageLookupByLibrary.simpleMessage("Search ..."),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "snacks": MessageLookupByLibrary.simpleMessage("Snacks"),
     "system": MessageLookupByLibrary.simpleMessage("System"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",
@@ -103,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "userNotFound": MessageLookupByLibrary.simpleMessage(
       "No account found with this email.",
     ),
+    "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
     "weakPassword": MessageLookupByLibrary.simpleMessage(
       "The password provided is too weak.",
     ),
