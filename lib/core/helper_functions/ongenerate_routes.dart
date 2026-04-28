@@ -4,7 +4,9 @@ import 'package:grocify/features/auth/presentation/views/signup_view.dart';
 import 'package:grocify/features/home/presentation/views/home_view.dart';
 import 'package:grocify/features/home/presentation/views/main_layout.dart';
 import 'package:grocify/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:grocify/features/products/domain/entities/product_entity.dart';
 import 'package:grocify/features/products/presentation/views/products_view.dart';
+import 'package:grocify/features/products/presentation/views/widgets/deatils_view.dart';
 import 'package:grocify/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
@@ -63,28 +65,28 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     //     settings: settings,
     //   );
 
-    // case DisplayDetailView.routeName:
-    //   final FigureEntity figure = settings.arguments as FigureEntity;
-    //   return PageRouteBuilder(
-    //     settings: settings,
-    //     transitionDuration: const Duration(milliseconds: 900),
-    //     reverseTransitionDuration: const Duration(milliseconds: 900),
-    //     pageBuilder: (_, animation, __) => DisplayDetailView( figure: figure),
-    //     transitionsBuilder: (_, animation, __, child) {
-    //       return FadeTransition(
-    //         opacity: Tween<double>(
-    //           begin: 0.0,
-    //           end: 1.0,
-    //         ).animate(
-    //           CurvedAnimation(
-    //             parent: animation,
-    //             curve: const Interval(0.2, 1.0),
-    //           ),
-    //         ),
-    //         child: child,
-    //       );
-    //     },
-    //   );
+    case DetailsView.routeName:
+      final ProductEntity product = settings.arguments as ProductEntity;
+      return PageRouteBuilder(
+        settings: settings,
+        transitionDuration: const Duration(milliseconds: 900),
+        reverseTransitionDuration: const Duration(milliseconds: 900),
+        pageBuilder: (_, animation, __) => DetailsView( product: product),
+        transitionsBuilder: (_, animation, __, child) {
+          return FadeTransition(
+            opacity: Tween<double>(
+              begin: 0.0,
+              end: 1.0,
+            ).animate(
+              CurvedAnimation(
+                parent: animation,
+                curve: const Interval(0.2, 1.0),
+              ),
+            ),
+            child: child,
+          );
+        },
+      );
 
     // case WeatherView.routeName:
     //   return MaterialPageRoute(

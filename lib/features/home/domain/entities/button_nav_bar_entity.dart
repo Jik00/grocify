@@ -15,27 +15,27 @@ class ButtomNavBarEntity {
 
 List<ButtomNavBarEntity> get bottomNavBarItems => [
       ButtomNavBarEntity(
-        name: S().home,
+        name: S.current.home,
         activeImg: Assets.assetsImagesIconsHomeBold,
         inActiveImg: Assets.assetsImagesIconsHomeOutline,
-       // routeName: HomeView.routeName,
+        // routeName: HomeView.routeName,
       ),
       ButtomNavBarEntity(
-        name: S().products,
-        activeImg: Assets.assetsImagesIconsProductsBold,
-        inActiveImg: Assets.assetsImagesIconsProductsOutline,
-      //  routeName: ProductsView.routeName,
+        name: S.current.fav,
+        activeImg: Assets.assetsImagesIconsHeartBold,
+        inActiveImg: Assets.assetsImagesIconsHeartOutline,
+        //  routeName: ProductsView.routeName,
       ),
       ButtomNavBarEntity(
-        name: S().cart,
+        name: S.current.cart,
         activeImg: Assets.assetsImagesIconsCartBold,
         inActiveImg: Assets.assetsImagesIconsCartOutline,
-      //  routeName: CartView.routeName,
+        //  routeName: CartView.routeName,
       ),
       ButtomNavBarEntity(
-        name: S().profile,
+        name: S.current.profile,
         activeImg: Assets.assetsImagesIconsUserBold,
         inActiveImg: Assets.assetsImagesIconsUserOutline,
-      //  routeName: ProfileView.routeName,
+        //  routeName: ProfileView.routeName,
       ),
     ];

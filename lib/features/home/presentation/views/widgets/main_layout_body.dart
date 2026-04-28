@@ -13,21 +13,20 @@ class MainLayoutBody extends StatefulWidget {
 }
 
 class _MainLayoutBodyState extends State<MainLayoutBody> {
-  // navigation keys -> nested navigation stack
 
   @override
   Widget build(BuildContext context) {
     return IndexedStack(
       index: widget.currentViewIndex,
       children: [
-        // Wrapped Navigator fun to handle inside navigation stack
+        
         HeroControllerScope(
           controller: MaterialApp.createMaterialHeroController(),
           child: _buildNavigator(0, HomeView.routeName),
         ),
-        _buildNavigator(1, HomeView.routeName),
-        _buildNavigator(2, HomeView.routeName),
-        _buildNavigator(3, HomeView.routeName),
+        // _buildNavigator(1, HomeView.routeName),
+        // _buildNavigator(2, HomeView.routeName),
+        // _buildNavigator(3, HomeView.routeName),
       ],
     );
   }

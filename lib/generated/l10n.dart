@@ -678,6 +678,26 @@ class S {
   String get price_9 {
     return Intl.message('44.25', name: 'price_9', desc: '', args: []);
   }
+
+  /// `Add To Cart`
+  String get addToCart {
+    return Intl.message('Add To Cart', name: 'addToCart', desc: '', args: []);
+  }
+
+  /// `pc`
+  String get pc {
+    return Intl.message('pc', name: 'pc', desc: '', args: []);
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `EGP`
+  String get egp {
+    return Intl.message('EGP', name: 'egp', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

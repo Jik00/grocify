@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptTerms": MessageLookupByLibrary.simpleMessage(
       "You must accept the terms and conditions to create an account",
     ),
+    "addToCart": MessageLookupByLibrary.simpleMessage("Add To Cart"),
     "bakeriesPastries": MessageLookupByLibrary.simpleMessage(
       "Bakeries & Pastries",
     ),
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
     ),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
     "description_galaxy_dark": MessageLookupByLibrary.simpleMessage(
       "Enjoy our velvety 70% cocoa galaxy dark chocolate. Packed full with chocolatey richness that melts in your mouth with its buttery texture. Made with no added compounds or vegetable fats",
     ),
@@ -54,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "eggCheeseColdcuts": MessageLookupByLibrary.simpleMessage(
       "Egg, Cheese & Cold Cuts",
     ),
+    "egp": MessageLookupByLibrary.simpleMessage("EGP"),
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists with this email.",
@@ -141,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "pc": MessageLookupByLibrary.simpleMessage("pc"),
     "petsSupplies": MessageLookupByLibrary.simpleMessage("Pets Supplies"),
     "price_1": MessageLookupByLibrary.simpleMessage("100.00"),
     "price_2": MessageLookupByLibrary.simpleMessage("110.00"),

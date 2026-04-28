@@ -106,6 +106,14 @@ class Assets {
   /// assets/images/icons/google_icons.svg
   static const String assetsImagesIconsGoogleIcons = "assets/images/icons/google_icons.svg";
 
+  /// Assets for assetsImagesIconsHeartBold
+  /// assets/images/icons/heart_bold.svg
+  static const String assetsImagesIconsHeartBold = "assets/images/icons/heart_bold.svg";
+
+  /// Assets for assetsImagesIconsHeartOutline
+  /// assets/images/icons/heart_outline.svg
+  static const String assetsImagesIconsHeartOutline = "assets/images/icons/heart_outline.svg";
+
   /// Assets for assetsImagesIconsHomeBold
   /// assets/images/icons/home_bold.svg
   static const String assetsImagesIconsHomeBold = "assets/images/icons/home_bold.svg";

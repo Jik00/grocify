@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/utils/context_extensions.dart';
+import 'package:grocify/core/widgets/custom_container.dart';
+import 'package:grocify/generated/l10n.dart';
 
 class OfferContainer extends StatelessWidget {
   const OfferContainer({super.key, required this.color, required this.img});
@@ -58,24 +60,7 @@ class OfferContainer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 5.h),
-                  Container(
-                    width: 80.w,
-                    height: 28.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: AppColors.primary,
-                    ),
-                    child: Center(
-                      child: Text(
-                        context.loc.getNow,
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
+                  CustomContainer(title: S.current.getNow, w: 80, h: 28, r: 15, sp : 12),
                 ],
               ),
             ],
@@ -85,3 +70,4 @@ class OfferContainer extends StatelessWidget {
     );
   }
 }
+

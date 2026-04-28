@@ -5,6 +5,7 @@ const String kAppLanguage = 'app_language'; // store selected language
 /// Hero Tag ///
 const String kWhiteRec = 'white_rectangle';
 
+
 /// lottie ///
 const String kLoadingLottie = 'assets/images/lottie/LoadingFruits.json'; 
 

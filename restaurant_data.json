@@ -1,0 +1,65 @@
+{
+    "orders": [
+        {
+            "order_number": 60913,
+            "customer_name": "a",
+            "table_no": "1",
+            "datetime": "2026-04-28 21:25:05",
+            "items": [
+                {
+                    "item": "Fries Meal",
+                    "quantity": 1,
+                    "price": 25,
+                    "amount": 25,
+                    "icon": "\ud83c\udf5f"
+                },
+                {
+                    "item": "Chicken Wings",
+                    "quantity": 1,
+                    "price": 45,
+                    "amount": 45,
+                    "icon": "\ud83c\udf57"
+                },
+                {
+                    "item": "Caesar Salad",
+                    "quantity": 2,
+                    "price": 28,
+                    "amount": 56,
+                    "icon": "\ud83e\udd57"
+                }
+            ],
+            "subtotal": 126,
+            "tax": 41.580000000000005,
+            "service": 1.26,
+            "discount": 0,
+            "total": 168.84
+        },
+        {
+            "order_number": 80321,
+            "customer_name": "1",
+            "table_no": "1",
+            "datetime": "2026-04-28 22:27:19",
+            "items": [
+                {
+                    "item": "Fries Meal",
+                    "quantity": 2,
+                    "price": 25,
+                    "amount": 50,
+                    "icon": "\ud83c\udf5f"
+                },
+                {
+                    "item": "Chicken Wings",
+                    "quantity": 1,
+                    "price": 45,
+                    "amount": 45,
+                    "icon": "\ud83c\udf57"
+                }
+            ],
+            "subtotal": 95,
+            "tax": 31.35,
+            "service": 0.9500000000000001,
+            "discount": 0,
+            "total": 127.3
+        }
+    ]
+}

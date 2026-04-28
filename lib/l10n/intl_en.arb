@@ -81,5 +81,9 @@
   "price_6": "120.00",
   "price_7": "67.00",
   "price_8": "105.25",
-  "price_9": "44.25"
+  "price_9": "44.25",
+  "addToCart": "Add To Cart",
+  "pc": "pc",
+  "description": "Description",
+  "egp": "EGP"
 }
