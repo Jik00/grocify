@@ -12,19 +12,32 @@ class CategoriesDropList extends StatefulWidget {
 }
 
 class _CategoriesDropListState extends State<CategoriesDropList> {
+  late int selectedIndex;
   List<String> categoriesNames = categories.map((e) => e.name).toList();
 
   @override
-  Widget build(BuildContext context) {
-    int selectedIndex =
-        categoriesNames.indexWhere((element) => element == widget.cat);
+  void initState() {
+    super.initState();
+    selectedIndex = categoriesNames.indexWhere((element) => element == widget.cat);
+  }
 
+  @override
+  void didUpdateWidget(covariant CategoriesDropList oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Update if the parent widget changes the cat value
+    if (oldWidget.cat != widget.cat) {
+      selectedIndex = categoriesNames.indexWhere((element) => element == widget.cat);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return DropdownButton<int>(
       underline: SizedBox(height: 0.h),
       dropdownColor: Colors.white,
       alignment: Alignment.center,
       borderRadius: BorderRadius.circular(12.r),
-      value: selectedIndex,
+      value: selectedIndex != -1 ? selectedIndex : null,
       items: List.generate(
         categoriesNames.length,
         (index) => DropdownMenuItem(
