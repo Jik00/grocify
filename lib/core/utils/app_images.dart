@@ -42,6 +42,42 @@ class Assets {
   /// assets/images/cat9.png
   static const String assetsImagesCat9 = "assets/images/cat9.png";
 
+  /// Assets for assetsImagesChocolate1
+  /// assets/images/chocolate1.png
+  static const String assetsImagesChocolate1 = "assets/images/chocolate1.png";
+
+  /// Assets for assetsImagesChocolate2
+  /// assets/images/chocolate2.png
+  static const String assetsImagesChocolate2 = "assets/images/chocolate2.png";
+
+  /// Assets for assetsImagesChocolate3
+  /// assets/images/chocolate3.png
+  static const String assetsImagesChocolate3 = "assets/images/chocolate3.png";
+
+  /// Assets for assetsImagesChocolate4
+  /// assets/images/chocolate4.png
+  static const String assetsImagesChocolate4 = "assets/images/chocolate4.png";
+
+  /// Assets for assetsImagesChocolate5
+  /// assets/images/chocolate5.png
+  static const String assetsImagesChocolate5 = "assets/images/chocolate5.png";
+
+  /// Assets for assetsImagesChocolate6
+  /// assets/images/chocolate6.png
+  static const String assetsImagesChocolate6 = "assets/images/chocolate6.png";
+
+  /// Assets for assetsImagesChocolate7
+  /// assets/images/chocolate7.png
+  static const String assetsImagesChocolate7 = "assets/images/chocolate7.png";
+
+  /// Assets for assetsImagesChocolate8
+  /// assets/images/chocolate8.png
+  static const String assetsImagesChocolate8 = "assets/images/chocolate8.png";
+
+  /// Assets for assetsImagesChocolate9
+  /// assets/images/chocolate9.png
+  static const String assetsImagesChocolate9 = "assets/images/chocolate9.png";
+
   /// Assets for assetsImagesIconsCartBold
   /// assets/images/icons/cart_bold.svg
   static const String assetsImagesIconsCartBold = "assets/images/icons/cart_bold.svg";

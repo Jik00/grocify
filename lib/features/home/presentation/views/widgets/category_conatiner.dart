@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/features/home/domain/entities/category_entity.dart';
+import 'package:grocify/features/products/presentation/views/products_view.dart';
 import 'package:grocify/generated/l10n.dart';
 
 class CategoryConatiner extends StatelessWidget {
@@ -11,6 +13,9 @@ class CategoryConatiner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        NavigationService.navigateWithinTab(context, ProductsView.routeName, arguments: cat.name);
+      },
       child: Container(
         width: 105.w,
         height: 143.h,
@@ -53,7 +58,7 @@ class CategoryConatiner extends StatelessWidget {
                       cat.name == S.current.beuty)
                   ? 95.w
                   : (cat.name == S.current.petsSupplies)
-                      ? 90
+                      ? 90.w
                       : 105.w,
             ),
           ],

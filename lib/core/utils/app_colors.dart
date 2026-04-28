@@ -22,4 +22,5 @@ abstract class AppColors {
   static const container7 = Color(0xFFE7BEE0);
   static const container8 = Color(0xFFF4F3E3);
   static const container9 = Color(0xFFECECEC); 
+  static const red = Color(0xFFF91C20);
 }

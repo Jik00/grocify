@@ -488,6 +488,196 @@ class S {
       args: [],
     );
   }
+
+  /// `Chocolate`
+  String get chocolate {
+    return Intl.message('Chocolate', name: 'chocolate', desc: '', args: []);
+  }
+
+  /// `Galaxy Chocolate Vegan (75g)`
+  String get galaxy_chocolate_vegan {
+    return Intl.message(
+      'Galaxy Chocolate Vegan (75g)',
+      name: 'galaxy_chocolate_vegan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Galaxy Dark Chocolate 70% cocoa (75g)`
+  String get galaxy_dark_chocolate_70_cocoa {
+    return Intl.message(
+      'Galaxy Dark Chocolate 70% cocoa (75g)',
+      name: 'galaxy_dark_chocolate_70_cocoa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Galaxy Chocolate Vegan Gluten Free (75g)`
+  String get galaxy_chocolate {
+    return Intl.message(
+      'Galaxy Chocolate Vegan Gluten Free (75g)',
+      name: 'galaxy_chocolate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kinder Chocolate Maxi 4pcs (96g)`
+  String get kinder_chocolate_maxi {
+    return Intl.message(
+      'Kinder Chocolate Maxi 4pcs (96g)',
+      name: 'kinder_chocolate_maxi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kinder Chocolate Bueno 10pcs (100g)`
+  String get kinder_chocolate_bueno {
+    return Intl.message(
+      'Kinder Chocolate Bueno 10pcs (100g)',
+      name: 'kinder_chocolate_bueno',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kinder Chocolate Bueno Mini 10pcs (100g)`
+  String get kinder_chocolate_bueno_mini {
+    return Intl.message(
+      'Kinder Chocolate Bueno Mini 10pcs (100g)',
+      name: 'kinder_chocolate_bueno_mini',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cadbury dairy Milk Oreo Chocolate Bar (95g)`
+  String get cadbury_dairy_milk_oreo {
+    return Intl.message(
+      'Cadbury dairy Milk Oreo Chocolate Bar (95g)',
+      name: 'cadbury_dairy_milk_oreo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cadbury dairy Milk Caramel Chocolate Bar (130g)`
+  String get cadbury_dairy_milk_caramel {
+    return Intl.message(
+      'Cadbury dairy Milk Caramel Chocolate Bar (130g)',
+      name: 'cadbury_dairy_milk_caramel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cadbury dairy Milk Chocolate Bar (86g)`
+  String get cadbury_dairy_milk {
+    return Intl.message(
+      'Cadbury dairy Milk Chocolate Bar (86g)',
+      name: 'cadbury_dairy_milk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Galaxy Fusions Raspberry Meringue`
+  String get galaxy_fusions_raspberry {
+    return Intl.message(
+      'Galaxy Fusions Raspberry Meringue',
+      name: 'galaxy_fusions_raspberry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Galaxy Fusions Dark Chocolate 70% Cocoa`
+  String get galaxy_fusions_dark_chocolate {
+    return Intl.message(
+      'Galaxy Fusions Dark Chocolate 70% Cocoa',
+      name: 'galaxy_fusions_dark_chocolate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Galaxy Fusions Sea Salt`
+  String get galaxy_fusions_sea_salt {
+    return Intl.message(
+      'Galaxy Fusions Sea Salt',
+      name: 'galaxy_fusions_sea_salt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EGP 110.00`
+  String get price_galaxy_dark_70 {
+    return Intl.message(
+      'EGP 110.00',
+      name: 'price_galaxy_dark_70',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enjoy our velvety 70% cocoa galaxy dark chocolate. Packed full with chocolatey richness that melts in your mouth with its buttery texture. Made with no added compounds or vegetable fats`
+  String get description_galaxy_dark {
+    return Intl.message(
+      'Enjoy our velvety 70% cocoa galaxy dark chocolate. Packed full with chocolatey richness that melts in your mouth with its buttery texture. Made with no added compounds or vegetable fats',
+      name: 'description_galaxy_dark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `100.00`
+  String get price_1 {
+    return Intl.message('100.00', name: 'price_1', desc: '', args: []);
+  }
+
+  /// `110.00`
+  String get price_2 {
+    return Intl.message('110.00', name: 'price_2', desc: '', args: []);
+  }
+
+  /// `100.00`
+  String get price_3 {
+    return Intl.message('100.00', name: 'price_3', desc: '', args: []);
+  }
+
+  /// `100.00`
+  String get price_4 {
+    return Intl.message('100.00', name: 'price_4', desc: '', args: []);
+  }
+
+  /// `190.00`
+  String get price_5 {
+    return Intl.message('190.00', name: 'price_5', desc: '', args: []);
+  }
+
+  /// `120.00`
+  String get price_6 {
+    return Intl.message('120.00', name: 'price_6', desc: '', args: []);
+  }
+
+  /// `67.00`
+  String get price_7 {
+    return Intl.message('67.00', name: 'price_7', desc: '', args: []);
+  }
+
+  /// `105.25`
+  String get price_8 {
+    return Intl.message('105.25', name: 'price_8', desc: '', args: []);
+  }
+
+  /// `44.25`
+  String get price_9 {
+    return Intl.message('44.25', name: 'price_9', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

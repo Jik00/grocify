@@ -18,26 +18,26 @@ class HomeViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                CustomAppBar(),
+                const CustomAppBar(),
                 SizedBox(
                   height: 16.h,
                 ),
-                SearchTextField(),
+                const SearchTextField(),
                 SizedBox(
                   height: 12.h,
                 ),
-                DiscountList(),
+                const DiscountList(),
                 SizedBox(
                   height: 12.h,
                 ),
-                CategoriesRow(),
+                const CategoriesRow(),
                 SizedBox(
                   height: 12.h,
                 ),
               ],
             ),
           ),
-          CategoryGrid(),
+          const CategoryGrid(),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 80.h,

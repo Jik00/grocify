@@ -4,11 +4,11 @@ import 'package:grocify/features/auth/presentation/views/signup_view.dart';
 import 'package:grocify/features/home/presentation/views/home_view.dart';
 import 'package:grocify/features/home/presentation/views/main_layout.dart';
 import 'package:grocify/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:grocify/features/products/presentation/views/products_view.dart';
 import 'package:grocify/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
   switch (settings.name) {
-
     case SplashView.routeName:
       return MaterialPageRoute(
         builder: (_) => const SplashView(),
@@ -22,16 +22,16 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
       );
 
     case SignInView.routeName:
-    return MaterialPageRoute(
-      builder: (_) => const SignInView(),
-      settings: settings,
-    );
+      return MaterialPageRoute(
+        builder: (_) => const SignInView(),
+        settings: settings,
+      );
 
-  case SignupView.routeName:
-    return MaterialPageRoute(
-      builder: (_) => const SignupView(),
-      settings: settings,
-    );
+    case SignupView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const SignupView(),
+        settings: settings,
+      );
 
     case MainLayout.routeName:
       return MaterialPageRoute(
@@ -45,11 +45,14 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         settings: settings,
       );
 
-    // case ErasView.routeName:
-    //   return MaterialPageRoute(
-    //     builder: (_) => const ErasView(),
-    //     settings: settings,
-    //   );
+    case ProductsView.routeName:
+      final String initialCategory = settings.arguments as String;
+      return MaterialPageRoute(
+        builder: (_) => ProductsView(
+          cat: initialCategory,
+        ),
+        settings: settings,
+      );
 
     // case FigureView.routeName:
     //   final String eraName = settings.arguments as String;

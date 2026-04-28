@@ -30,12 +30,25 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "beuty": MessageLookupByLibrary.simpleMessage("Beauty"),
     "beverages": MessageLookupByLibrary.simpleMessage("Beverages"),
+    "cadbury_dairy_milk": MessageLookupByLibrary.simpleMessage(
+      "Cadbury dairy Milk Chocolate Bar (86g)",
+    ),
+    "cadbury_dairy_milk_caramel": MessageLookupByLibrary.simpleMessage(
+      "Cadbury dairy Milk Caramel Chocolate Bar (130g)",
+    ),
+    "cadbury_dairy_milk_oreo": MessageLookupByLibrary.simpleMessage(
+      "Cadbury dairy Milk Oreo Chocolate Bar (95g)",
+    ),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+    "chocolate": MessageLookupByLibrary.simpleMessage("Chocolate"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
+    ),
+    "description_galaxy_dark": MessageLookupByLibrary.simpleMessage(
+      "Enjoy our velvety 70% cocoa galaxy dark chocolate. Packed full with chocolatey richness that melts in your mouth with its buttery texture. Made with no added compounds or vegetable fats",
     ),
     "discount": MessageLookupByLibrary.simpleMessage("Discount"),
     "eggCheeseColdcuts": MessageLookupByLibrary.simpleMessage(
@@ -52,6 +65,24 @@ class MessageLookup extends MessageLookupByLibrary {
       "Fruits & Vegetables",
     ),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "galaxy_chocolate": MessageLookupByLibrary.simpleMessage(
+      "Galaxy Chocolate Vegan Gluten Free (75g)",
+    ),
+    "galaxy_chocolate_vegan": MessageLookupByLibrary.simpleMessage(
+      "Galaxy Chocolate Vegan (75g)",
+    ),
+    "galaxy_dark_chocolate_70_cocoa": MessageLookupByLibrary.simpleMessage(
+      "Galaxy Dark Chocolate 70% cocoa (75g)",
+    ),
+    "galaxy_fusions_dark_chocolate": MessageLookupByLibrary.simpleMessage(
+      "Galaxy Fusions Dark Chocolate 70% Cocoa",
+    ),
+    "galaxy_fusions_raspberry": MessageLookupByLibrary.simpleMessage(
+      "Galaxy Fusions Raspberry Meringue",
+    ),
+    "galaxy_fusions_sea_salt": MessageLookupByLibrary.simpleMessage(
+      "Galaxy Fusions Sea Salt",
+    ),
     "getNow": MessageLookupByLibrary.simpleMessage("Get Now"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
@@ -63,6 +94,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "The email address is not valid.",
+    ),
+    "kinder_chocolate_bueno": MessageLookupByLibrary.simpleMessage(
+      "Kinder Chocolate Bueno 10pcs (100g)",
+    ),
+    "kinder_chocolate_bueno_mini": MessageLookupByLibrary.simpleMessage(
+      "Kinder Chocolate Bueno Mini 10pcs (100g)",
+    ),
+    "kinder_chocolate_maxi": MessageLookupByLibrary.simpleMessage(
+      "Kinder Chocolate Maxi 4pcs (96g)",
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "light": MessageLookupByLibrary.simpleMessage("Light"),
@@ -102,6 +142,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "petsSupplies": MessageLookupByLibrary.simpleMessage("Pets Supplies"),
+    "price_1": MessageLookupByLibrary.simpleMessage("100.00"),
+    "price_2": MessageLookupByLibrary.simpleMessage("110.00"),
+    "price_3": MessageLookupByLibrary.simpleMessage("100.00"),
+    "price_4": MessageLookupByLibrary.simpleMessage("100.00"),
+    "price_5": MessageLookupByLibrary.simpleMessage("190.00"),
+    "price_6": MessageLookupByLibrary.simpleMessage("120.00"),
+    "price_7": MessageLookupByLibrary.simpleMessage("67.00"),
+    "price_8": MessageLookupByLibrary.simpleMessage("105.25"),
+    "price_9": MessageLookupByLibrary.simpleMessage("44.25"),
+    "price_galaxy_dark_70": MessageLookupByLibrary.simpleMessage("EGP 110.00"),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "requiredField": MessageLookupByLibrary.simpleMessage(
