@@ -23,10 +23,7 @@ class ProductContainer extends StatelessWidget {
                 : EdgeInsets.only(top: 40.h),
             child: Image.asset(
               product.image,
-              width: (product.name == S.current.cadbury_dairy_milk_caramel ||
-                      product.name == S.current.cadbury_dairy_milk_oreo)
-                  ? 50.w
-                  : 110.w,
+              width: (product.id == 4 || product.id == 3) ? 50.w : 110.w,
             ),
           ),
         ),

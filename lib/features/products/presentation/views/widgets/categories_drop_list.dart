@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/features/home/domain/entities/category_entity.dart';
 
 class CategoriesDropList extends StatefulWidget {
-  const CategoriesDropList({super.key, required this.cat});
+  const CategoriesDropList({super.key, required this.catId});
 
-  final String cat;
+  final int catId;
 
   @override
   State<CategoriesDropList> createState() => _CategoriesDropListState();
@@ -18,15 +18,15 @@ class _CategoriesDropListState extends State<CategoriesDropList> {
   @override
   void initState() {
     super.initState();
-    selectedIndex = categoriesNames.indexWhere((element) => element == widget.cat);
+    selectedIndex = widget.catId;
   }
 
   @override
   void didUpdateWidget(covariant CategoriesDropList oldWidget) {
     super.didUpdateWidget(oldWidget);
     // Update if the parent widget changes the cat value
-    if (oldWidget.cat != widget.cat) {
-      selectedIndex = categoriesNames.indexWhere((element) => element == widget.cat);
+    if (oldWidget.catId != widget.catId) {
+      selectedIndex = widget.catId;
     }
   }
 

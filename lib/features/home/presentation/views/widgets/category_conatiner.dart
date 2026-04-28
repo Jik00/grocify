@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/features/home/domain/entities/category_entity.dart';
 import 'package:grocify/features/products/presentation/views/products_view.dart';
-import 'package:grocify/generated/l10n.dart';
 
 class CategoryConatiner extends StatelessWidget {
   const CategoryConatiner({super.key, required this.cat});
@@ -14,7 +13,8 @@ class CategoryConatiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        NavigationService.navigateWithinTab(context, ProductsView.routeName, arguments: cat.name);
+        NavigationService.navigateWithinTab(context, ProductsView.routeName,
+            arguments: cat.id);
       },
       child: Container(
         width: 105.w,
@@ -54,10 +54,9 @@ class CategoryConatiner extends StatelessWidget {
             Spacer(),
             Image.asset(
               cat.img,
-              width: (cat.name == S.current.houseCleaning ||
-                      cat.name == S.current.beuty)
+              width: (cat.id == 5 || cat.id == 6)
                   ? 95.w
-                  : (cat.name == S.current.petsSupplies)
+                  : (cat.id == 8)
                       ? 90.w
                       : 105.w,
             ),

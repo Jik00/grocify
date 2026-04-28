@@ -46,10 +46,10 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
       );
 
     case ProductsView.routeName:
-      final String initialCategory = settings.arguments as String;
+      final int catId = settings.arguments as int;
       return MaterialPageRoute(
         builder: (_) => ProductsView(
-          cat: initialCategory,
+          catId: catId,
         ),
         settings: settings,
       );
