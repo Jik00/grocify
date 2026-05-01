@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocify/features/products/presentation/views/widgets/products_grid.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/widgets/products_grid.dart';
 import 'package:grocify/generated/l10n.dart';
 
 class ProductsViewBody extends StatelessWidget {

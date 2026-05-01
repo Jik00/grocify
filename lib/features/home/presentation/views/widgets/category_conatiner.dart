@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/features/home/domain/entities/category_entity.dart';
-import 'package:grocify/features/products/presentation/views/products_view.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/products_view.dart';
 
 class CategoryConatiner extends StatelessWidget {
   const CategoryConatiner({super.key, required this.cat});

@@ -4,9 +4,10 @@ import 'package:grocify/features/auth/presentation/views/signup_view.dart';
 import 'package:grocify/features/home/presentation/views/home_view.dart';
 import 'package:grocify/features/home/presentation/views/main_layout.dart';
 import 'package:grocify/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:grocify/features/products/domain/entities/product_entity.dart';
-import 'package:grocify/features/products/presentation/views/products_view.dart';
-import 'package:grocify/features/products/presentation/views/widgets/deatils_view.dart';
+import 'package:grocify/core/entities/product_entity.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/fav_view.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/products_view.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/widgets/deatils_view.dart';
 import 'package:grocify/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
@@ -56,22 +57,13 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         settings: settings,
       );
 
-    // case FigureView.routeName:
-    //   final String eraName = settings.arguments as String;
-    //   return MaterialPageRoute(
-    //     builder: (_) => FigureView(
-    //       eraName: eraName,
-    //     ),
-    //     settings: settings,
-    //   );
-
     case DetailsView.routeName:
       final ProductEntity product = settings.arguments as ProductEntity;
       return PageRouteBuilder(
         settings: settings,
         transitionDuration: const Duration(milliseconds: 900),
         reverseTransitionDuration: const Duration(milliseconds: 900),
-        pageBuilder: (_, animation, __) => DetailsView( product: product),
+        pageBuilder: (_, animation, __) => DetailsView(product: product),
         transitionsBuilder: (_, animation, __, child) {
           return FadeTransition(
             opacity: Tween<double>(
@@ -88,11 +80,11 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         },
       );
 
-    // case WeatherView.routeName:
-    //   return MaterialPageRoute(
-    //     builder: (_) => const WeatherView(),
-    //     settings: settings,
-    //   );
+    case FavView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const FavView(),
+        settings: settings,
+      );
 
     // case ChatbotView.routeName:
     //   return MaterialPageRoute(

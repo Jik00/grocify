@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/core/utils/app_colors.dart';
-import 'package:grocify/features/products/domain/entities/product_entity.dart';
-import 'package:grocify/features/products/presentation/views/widgets/deatils_view.dart';
-import 'package:grocify/features/products/presentation/views/widgets/fav_icon.dart';
-import 'package:grocify/features/products/presentation/views/widgets/plus_icon.dart';
+import 'package:grocify/core/entities/product_entity.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/widgets/deatils_view.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/widgets/fav_icon.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/widgets/plus_icon.dart';
 import 'package:grocify/generated/l10n.dart';
 
 class ProductContainer extends StatelessWidget {
@@ -29,7 +29,7 @@ class ProductContainer extends StatelessWidget {
                 tag: '${product.id}img',
                 child: Image.asset(
                   product.image,
-                  width: (product.id == 4 || product.id == 3) ? 50.w : 110.w,
+                  width: (product.id == '4' || product.id == '3') ? 50.w : 110.w,
                 ),
               ),
             ),
@@ -38,7 +38,7 @@ class ProductContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const FavIcon(),
+              FavIcon(productId: product.id),
               // Spacer(),
               SizedBox(
                 height: 125.h,

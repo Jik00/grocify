@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/widgets/custom_container.dart';
 import 'package:grocify/features/home/presentation/views/widgets/quantity_selector.dart';
-import 'package:grocify/features/products/domain/entities/product_entity.dart';
+import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/generated/l10n.dart';
 
 class DetailsViewBody extends StatelessWidget {
@@ -27,11 +27,11 @@ class DetailsViewBody extends StatelessWidget {
                   tag: '${product.id}img',
                   child: Image.asset(
                     product.image,
-                    width: (product.id == 3 || product.id == 4)
+                    width: (product.id == '3' || product.id == '4')
                         ? 120.w
-                        : (product.id == 6 ||
-                                product.id == 7 ||
-                                product.id == 8)
+                        : (product.id == '6' ||
+                                product.id == '7' ||
+                                product.id == '8')
                             ? 240.w
                             : double.maxFinite,
                     fit: BoxFit.cover,
