@@ -698,6 +698,46 @@ class S {
   String get egp {
     return Intl.message('EGP', name: 'egp', desc: '', args: []);
   }
+
+  /// `No Favorites Yet`
+  String get noFavYet {
+    return Intl.message(
+      'No Favorites Yet',
+      name: 'noFavYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Items in Cart`
+  String get noItemsInCart {
+    return Intl.message(
+      'No Items in Cart',
+      name: 'noItemsInCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message('Checkout', name: 'checkout', desc: '', args: []);
+  }
+
+  /// `Continue Shopping`
+  String get continueShopping {
+    return Intl.message(
+      'Continue Shopping',
+      name: 'continueShopping',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

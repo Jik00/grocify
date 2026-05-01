@@ -42,8 +42,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+    "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
     "chocolate": MessageLookupByLibrary.simpleMessage("Chocolate"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "continueShopping": MessageLookupByLibrary.simpleMessage(
+      "Continue Shopping",
+    ),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
@@ -129,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "noFavYet": MessageLookupByLibrary.simpleMessage("No Favorites Yet"),
+    "noItemsInCart": MessageLookupByLibrary.simpleMessage("No Items in Cart"),
     "off": MessageLookupByLibrary.simpleMessage("40%"),
     "onboarding1Subtitle": MessageLookupByLibrary.simpleMessage(
       "Our grocery app is your ultimate shopping companion, designed to simplify and enhance your grocery shopping experience.",
@@ -170,6 +176,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Terms & Conditions",
     ),
     "theme": MessageLookupByLibrary.simpleMessage("Theme"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
     "userNotFound": MessageLookupByLibrary.simpleMessage(
       "No account found with this email.",
     ),

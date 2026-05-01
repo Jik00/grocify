@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/products_grid.dart';
 import 'package:grocify/generated/l10n.dart';
 
@@ -27,7 +28,9 @@ class ProductsViewBody extends StatelessWidget {
               ],
             ),
           ),
-          const ProductsGrid(),
+          ProductsGrid(
+            products: productsEntities,
+          ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 90.h,

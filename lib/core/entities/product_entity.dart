@@ -12,11 +12,12 @@ class ProductEntity {
     required this.name,
     required this.price,
     required this.image,
-    required this.description, required this.id,
+    required this.description,
+    required this.id,
   });
 }
 
-List<ProductEntity> get products => [
+List<ProductEntity> get productsEntities => [
       ProductEntity(
         name: S.current.galaxy_chocolate_vegan,
         price: S.current.price_1,

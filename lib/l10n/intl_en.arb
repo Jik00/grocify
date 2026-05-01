@@ -85,5 +85,10 @@
   "addToCart": "Add To Cart",
   "pc": "pc",
   "description": "Description",
-  "egp": "EGP"
+  "egp": "EGP",
+  "noFavYet": "No Favorites Yet",
+  "noItemsInCart": "No Items in Cart",
+  "total": "Total",
+  "checkout": "Checkout",
+  "continueShopping": "Continue Shopping"
 }

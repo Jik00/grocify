@@ -3,8 +3,10 @@ import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/product_container.dart';
 
 class ProductsGrid extends StatelessWidget {
-  const ProductsGrid({super.key});
+  const ProductsGrid({super.key, required this.products});
 
+  final List<ProductEntity> products;
+  
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
