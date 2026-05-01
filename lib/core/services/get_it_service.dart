@@ -5,6 +5,9 @@ import 'package:grocify/core/services/supabase_auth_service.dart';
 import 'package:grocify/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
 import 'package:grocify/features/auth/domain/usecases/check_auth_status.dart';
+import 'package:grocify/features/products_&_fav/data/repo/fav_repo_impl.dart';
+import 'package:grocify/features/products_&_fav/domain/repo/fav_repo.dart';
+import 'package:grocify/features/products_&_fav/presentation/manager/fav_cubit/fav_cubit.dart';
 import 'package:grocify/features/profile/data/datasource/hive_profile_datasource.dart';
 import 'package:grocify/features/profile/data/repo/profile_repo_impl.dart';
 import 'package:grocify/features/profile/domain/repo/profile_repo.dart';
@@ -25,12 +28,18 @@ void setupGetIt() async {
     AuthRepoImpl(supabaseAuthService: getIt<SupabaseAuthService>()),
   );
 
-  getIt.registerSingleton<ProfileRepo>( 
+  getIt.registerSingleton<FavRepo>(
+    FavRepoImpl(
+      supabaseDataSource: getIt<SupabaseDataSource>(),
+    ),
+  );
+
+  getIt.registerSingleton<ProfileRepo>(
     ProfileRepoImpl(
       supabaseDataSource: getIt<SupabaseDataSource>(),
       localDataSource: getIt<HiveProfileDataSource>(),
     ),
-   );
+  );
 
   getIt.registerSingleton<CheckAuthStatusUseCase>(
     CheckAuthStatusUseCase(getIt<AuthRepo>()),
@@ -38,5 +47,9 @@ void setupGetIt() async {
 
   getIt.registerSingleton<AuthController>(
     AuthController(getIt<CheckAuthStatusUseCase>(), getIt<ProfileRepo>()),
+  );
+
+  getIt.registerFactory<FavCubit>(
+    () => FavCubit(favRepo: getIt<FavRepo>()),
   );
 }
