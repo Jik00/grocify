@@ -22,4 +22,13 @@ abstract class DataSource {
     required String value,
     required Map<String, dynamic> newData,
   });
+
+
+  Future<void> deleteData({
+    required String tableName,
+    required String query,
+    required String value,
+    String? query2,
+    String? value2,
+  });
 }

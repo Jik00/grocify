@@ -86,4 +86,27 @@ class SupabaseDataSource extends DataSource {
       rethrow;
     }
   }
+
+  @override
+  Future<void> deleteData({
+    required String tableName,
+    required String query,
+    required String value,
+    String? query2,
+    String? value2,
+  }) async {
+    try {
+      var request = supabase.from(tableName).delete().eq(query, value);
+      
+      if (query2 != null && value2 != null) {
+        request = request.eq(query2, value2);
+      }
+
+      final response = await request;
+      log("Deleted data: $response");
+    } catch (e) {
+      log("Error deleting data: $e");
+      rethrow;
+    }
+  }
 }
