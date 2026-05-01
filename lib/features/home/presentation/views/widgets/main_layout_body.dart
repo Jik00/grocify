@@ -14,18 +14,19 @@ class MainLayoutBody extends StatefulWidget {
 }
 
 class _MainLayoutBodyState extends State<MainLayoutBody> {
-
   @override
   Widget build(BuildContext context) {
     return IndexedStack(
       index: widget.currentViewIndex,
       children: [
-        
         HeroControllerScope(
           controller: MaterialApp.createMaterialHeroController(),
           child: _buildNavigator(0, HomeView.routeName),
         ),
-        _buildNavigator(1, FavView.routeName),
+        HeroControllerScope(
+          controller: MaterialApp.createMaterialHeroController(),
+          child: _buildNavigator(1, FavView.routeName),
+        ),
         // _buildNavigator(2, HomeView.routeName),
         // _buildNavigator(3, HomeView.routeName),
       ],

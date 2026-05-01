@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/core/utils/context_extensions.dart';
+import 'package:grocify/features/home/presentation/views/categories_view.dart';
 
 class CategoriesRow extends StatelessWidget {
   const CategoriesRow({super.key});
@@ -18,6 +20,10 @@ class CategoriesRow extends StatelessWidget {
           ),
         ),
         GestureDetector(
+          onTap: () {
+            NavigationService.navigateWithinTab(
+                context, CategoriesView.routeName);
+          },
           child: Row(
             children: [
               Text(
