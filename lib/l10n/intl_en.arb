@@ -83,6 +83,8 @@
   "price_8": "105.25",
   "price_9": "44.25",
   "addToCart": "Add To Cart",
+  "delete" : "Delete",
+  "clearAll" : "Clear All",
   "pc": "pc",
   "description": "Description",
   "egp": "EGP",
@@ -90,5 +92,6 @@
   "noItemsInCart": "No Items in Cart",
   "total": "Total",
   "checkout": "Checkout",
-  "continueShopping": "Continue Shopping"
+  "continueShopping": "Continue Shopping",
+  "noCart": "You have no items in your cart"
 }

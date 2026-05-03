@@ -5,6 +5,7 @@ import 'package:grocify/core/services/supabase_auth_service.dart';
 import 'package:grocify/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
 import 'package:grocify/features/auth/domain/usecases/check_auth_status.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:grocify/features/products_&_fav/data/repo/fav_repo_impl.dart';
 import 'package:grocify/features/products_&_fav/domain/repo/fav_repo.dart';
 import 'package:grocify/features/products_&_fav/presentation/manager/fav_cubit/fav_cubit.dart';
@@ -51,5 +52,9 @@ void setupGetIt() async {
 
   getIt.registerFactory<FavCubit>(
     () => FavCubit(favRepo: getIt<FavRepo>()),
+  );
+
+  getIt.registerFactory<CartCubit>(
+    () => CartCubit(),
   );
 }

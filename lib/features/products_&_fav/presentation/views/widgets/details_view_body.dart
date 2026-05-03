@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/widgets/custom_container.dart';
-import 'package:grocify/features/home/presentation/views/widgets/quantity_selector.dart';
+import 'package:grocify/features/products_&_fav/presentation/views/widgets/quantity_container.dart';
 import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/generated/l10n.dart';
 
@@ -92,7 +92,7 @@ class DetailsViewBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                QuantitySelector(),
+                QuantityContainer(),
                 CustomContainer(
                     title: S.current.addToCart, w: 139, h: 49, r: 40, sp: 16),
               ],

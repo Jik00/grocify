@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/entities/product_entity.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/deatils_view.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/fav_icon.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/plus_icon.dart';
@@ -69,7 +71,9 @@ class ProductContainer extends StatelessWidget {
           Positioned(
             right: 0,
             bottom: 60.h,
-            child: PlusIcon( onTap: (){} ,),
+            child: PlusIcon( onTap: (){
+              context.read<CartCubit>().addToCart( product);
+            } ,),
           ),
         ],
       ),

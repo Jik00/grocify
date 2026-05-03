@@ -684,6 +684,16 @@ class S {
     return Intl.message('Add To Cart', name: 'addToCart', desc: '', args: []);
   }
 
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Clear All`
+  String get clearAll {
+    return Intl.message('Clear All', name: 'clearAll', desc: '', args: []);
+  }
+
   /// `pc`
   String get pc {
     return Intl.message('pc', name: 'pc', desc: '', args: []);
@@ -734,6 +744,16 @@ class S {
     return Intl.message(
       'Continue Shopping',
       name: 'continueShopping',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no items in your cart`
+  String get noCart {
+    return Intl.message(
+      'You have no items in your cart',
+      name: 'noCart',
       desc: '',
       args: [],
     );

@@ -1,4 +1,5 @@
 import 'package:grocify/core/utils/app_images.dart';
+import 'package:grocify/features/cart/presentation/views/cart_view.dart';
 import 'package:grocify/features/home/presentation/views/home_view.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/fav_view.dart';
 import 'package:grocify/generated/l10n.dart';
@@ -31,8 +32,7 @@ List<ButtomNavBarEntity> get bottomNavBarItems => [
         name: S.current.cart,
         activeImg: Assets.assetsImagesIconsCartBold,
         inActiveImg: Assets.assetsImagesIconsCartOutline,
-        //routeName: CartView.routeName,
-        routeName: FavView.routeName,
+        routeName: CartView.routeName,
       ),
       ButtomNavBarEntity(
         name: S.current.profile,

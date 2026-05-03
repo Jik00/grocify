@@ -78,6 +78,14 @@ class Assets {
   /// assets/images/chocolate9.png
   static const String assetsImagesChocolate9 = "assets/images/chocolate9.png";
 
+  /// Assets for assetsImagesEmptyCart
+  /// assets/images/empty_cart.svg
+  static const String assetsImagesEmptyCart = "assets/images/empty_cart.svg";
+
+  /// Assets for assetsImagesEmptyCartt
+  /// assets/images/empty_cartt.png
+  static const String assetsImagesEmptyCartt = "assets/images/empty_cartt.png";
+
   /// Assets for assetsImagesGroceriesBag
   /// assets/images/groceries_bag.svg
   static const String assetsImagesGroceriesBag = "assets/images/groceries_bag.svg";

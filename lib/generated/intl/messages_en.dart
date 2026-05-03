@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
     "chocolate": MessageLookupByLibrary.simpleMessage("Chocolate"),
+    "clearAll": MessageLookupByLibrary.simpleMessage("Clear All"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "continueShopping": MessageLookupByLibrary.simpleMessage(
       "Continue Shopping",
@@ -52,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "defaultAuthError": MessageLookupByLibrary.simpleMessage(
       "Failed to Login.",
     ),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "description": MessageLookupByLibrary.simpleMessage("Description"),
     "description_galaxy_dark": MessageLookupByLibrary.simpleMessage(
       "Enjoy our velvety 70% cocoa galaxy dark chocolate. Packed full with chocolatey richness that melts in your mouth with its buttery texture. Made with no added compounds or vegetable fats",
@@ -132,6 +134,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "newMember": MessageLookupByLibrary.simpleMessage("New Member"),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
+    ),
+    "noCart": MessageLookupByLibrary.simpleMessage(
+      "You have no items in your cart",
     ),
     "noFavYet": MessageLookupByLibrary.simpleMessage("No Favorites Yet"),
     "noItemsInCart": MessageLookupByLibrary.simpleMessage("No Items in Cart"),

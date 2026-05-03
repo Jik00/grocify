@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/helper_functions/ongenerate_routes.dart';
 import 'package:grocify/core/services/navigation_service.dart';
+import 'package:grocify/features/cart/presentation/views/cart_view.dart';
 import 'package:grocify/features/home/presentation/views/home_view.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/fav_view.dart';
 
@@ -27,7 +28,7 @@ class _MainLayoutBodyState extends State<MainLayoutBody> {
           controller: MaterialApp.createMaterialHeroController(),
           child: _buildNavigator(1, FavView.routeName),
         ),
-        // _buildNavigator(2, HomeView.routeName),
+        _buildNavigator(2, CartView.routeName),
         // _buildNavigator(3, HomeView.routeName),
       ],
     );
