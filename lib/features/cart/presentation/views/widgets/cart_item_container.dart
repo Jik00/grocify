@@ -12,7 +12,7 @@ class CartItemContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(16),
-      height: 70.h,
+      height: 75.h,
       // width: 343.w,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -46,12 +46,16 @@ class CartItemContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  overflow: TextOverflow.ellipsis,
-                  product.name,
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 200.w),
+                  child: Text(
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                    product.name,
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 Text(
@@ -63,8 +67,9 @@ class CartItemContainer extends StatelessWidget {
                 ),
               ],
             ),
-            const Spacer(),
-            QuantitySelector(w: 20, sp: 14),
+            Flexible(
+              child: QuantitySelector(w: 20, sp: 14),
+            ),
           ],
         ),
       ),

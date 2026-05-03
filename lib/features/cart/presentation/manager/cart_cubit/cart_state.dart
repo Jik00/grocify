@@ -9,6 +9,10 @@ sealed class CartState extends Equatable {
 
 final class CartInitial extends CartState {}
 
-final class CartItemAdded extends CartState {}
+final class CartItemAdded extends CartState {
+  final String productId;
+
+  const CartItemAdded({required this.productId});
+}
 
 final class CartItemRemoved extends CartState {}

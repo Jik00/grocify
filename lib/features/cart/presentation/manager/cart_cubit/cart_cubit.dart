@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocify/core/entities/product_entity.dart';
@@ -8,17 +10,19 @@ part 'cart_state.dart';
 class CartCubit extends Cubit<CartState> {
   CartCubit() : super(CartInitial());
 
-  AllCartEntity cartEntity = AllCartEntity(cartItems: []);
+  AllCartEntity allCartEntity = AllCartEntity(cartItems: []);
 
   void addToCart(ProductEntity product) {
-    bool isProductExist = cartEntity.doesExist(product);
-    
-    var cartItem = cartEntity.getCartItem(product);
+    emit(CartInitial());
+    bool isProductExist = allCartEntity.doesExist(product);
+
+    var cartItem = allCartEntity.getCartItem(product);
     if (isProductExist) {
       cartItem.increaseCount();
     } else {
-      cartEntity.addCartItem(cartItem);
+      allCartEntity.addCartItem(cartItem);
     }
-    emit(CartItemAdded());
+    log(allCartEntity.cartItems.length.toString());
+    emit(CartItemAdded( productId: product.id));
   }
 }

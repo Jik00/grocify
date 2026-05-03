@@ -10,28 +10,47 @@ import 'package:grocify/features/products_&_fav/presentation/views/widgets/fav_i
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/plus_icon.dart';
 import 'package:grocify/generated/l10n.dart';
 
-class ProductContainer extends StatelessWidget {
-  const ProductContainer({super.key, required this.product});
+class ProductContainer extends StatefulWidget {
+  const ProductContainer({super.key, required this.product, required this.onAddToCart});
 
   final ProductEntity product;
+  final Function(GlobalKey) onAddToCart;
+
+
+  @override
+  State<ProductContainer> createState() => _ProductContainerState();
+}
+
+class _ProductContainerState extends State<ProductContainer> {
+  final GlobalKey gkItemImg = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => NavigationService.navigateWithinTab(context, DetailsView.routeName, arguments: product),
+      onTap: () => NavigationService.navigateWithinTab(
+        context,
+        DetailsView.routeName,
+        arguments: widget.product,
+      ),
       child: Stack(
         children: [
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
-              padding: (product.name == S.current.cadbury_dairy_milk)
+              padding: (widget.product.name == S.current.cadbury_dairy_milk)
                   ? EdgeInsets.only(top: 75.h)
                   : EdgeInsets.only(top: 40.h),
               child: Hero(
-                tag: '${product.id}img',
-                child: Image.asset(
-                  product.image,
-                  width: (product.id == '4' || product.id == '3') ? 50.w : 110.w,
+                tag: '${widget.product.id}img',
+                child: Container(
+                  key: gkItemImg,
+                  child: Image.asset(
+                    widget.product.image,
+                    width:
+                        (widget.product.id == '4' || widget.product.id == '3')
+                            ? 50.w
+                            : 110.w,
+                  ),
                 ),
               ),
             ),
@@ -40,15 +59,15 @@ class ProductContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FavIcon(productId: product.id),
+              FavIcon(productId: widget.product.id),
               // Spacer(),
               SizedBox(
                 height: 125.h,
               ),
               Hero(
-                tag: '${product.id}price',
+                tag: '${widget.product.id}price',
                 child: Text(
-                  product.price,
+                  widget.product.price,
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
@@ -56,9 +75,9 @@ class ProductContainer extends StatelessWidget {
                 ),
               ),
               Hero(
-                tag: '${product.id}name',
+                tag: '${widget.product.id}name',
                 child: Text(
-                  product.name,
+                  widget.product.name,
                   style: TextStyle(
                     color: AppColors.grayscale400,
                     fontSize: 11.sp,
@@ -71,9 +90,18 @@ class ProductContainer extends StatelessWidget {
           Positioned(
             right: 0,
             bottom: 60.h,
-            child: PlusIcon( onTap: (){
-              context.read<CartCubit>().addToCart( product);
-            } ,),
+            child: BlocListener<CartCubit, CartState>(
+              listener: (context, state) {
+                if (state is CartItemAdded && state.productId == widget.product.id ) {
+                  widget.onAddToCart(gkItemImg);
+                }
+              },
+              child: PlusIcon(
+                onTap: () {
+                  context.read<CartCubit>().addToCart(widget.product);
+                },
+              ),
+            ),
           ),
         ],
       ),

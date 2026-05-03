@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  add_to_cart_animation: ^2.0.4
   app_links: ^6.4.1
   cached_network_image: ^3.4.1
   carousel_slider: ^5.1.1
@@ -41,6 +42,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  flutter_slidable: ^4.0.3
   flutter_svg: ^2.1.0
   get_it: ^9.1.1
   google_fonts: ^8.0.2

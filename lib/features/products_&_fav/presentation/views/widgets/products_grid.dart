@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/entities/product_entity.dart';
+import 'package:grocify/core/utils/globals.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/product_container.dart';
 
 class ProductsGrid extends StatelessWidget {
@@ -20,6 +21,7 @@ class ProductsGrid extends StatelessWidget {
       itemBuilder: (context, index) {
         return ProductContainer(
           product: products[index],
+          onAddToCart: (itemKey) => runAddToCartAnimation(itemKey),
         );
       },
     );

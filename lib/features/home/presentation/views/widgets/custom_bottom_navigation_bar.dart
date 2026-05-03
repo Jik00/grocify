@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/core/utils/globals.dart';
 import 'package:grocify/features/home/domain/entities/button_nav_bar_entity.dart';
+import 'package:grocify/generated/l10n.dart';
 
 import 'naivation_bar_item.dart';
 
@@ -39,6 +41,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         children: bottomNavBarItems.asMap().entries.map((e) {
           var index = e.key;
           var entity = e.value;
+          bool isCart = entity.name == S.current.cart;
 
           return Expanded(
             flex: index == selectedIndex ? 3 : 2,
@@ -50,6 +53,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 });
               },
               child: NaivgationBarItem(
+                key: isCart ? gkCart : null,
                 isSelected: selectedIndex == index,
                 bottomNavBarEntity: entity,
               ),

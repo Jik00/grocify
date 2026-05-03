@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/core/utils/app_colors.dart';
@@ -14,16 +15,20 @@ class CartSlidable extends StatelessWidget {
       // Specify a key if the Slidable is dismissible.
       key: const ValueKey(0),
 
-      // The end action pane is the one at the right or the bottom side.
       endActionPane: ActionPane(
-        motion: const BehindMotion(),
+        extentRatio: 0.33,
+        motion: const ScrollMotion(),
         children: [
           SlidableAction(
-            onPressed: (context) {},
-            backgroundColor: AppColors.darkRedForErrorcolor,
+            onPressed: (_) {},
+            backgroundColor: AppColors.redDelete,
             foregroundColor: Colors.white,
             icon: Icons.delete,
             label: S.current.delete,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8.r),
+              bottomLeft: Radius.circular(8.r),
+            ),
           ),
         ],
       ),
@@ -31,7 +36,7 @@ class CartSlidable extends StatelessWidget {
       // The child of the Slidable is what the user sees when the
       // component is not dragged.
       child: CartItemContainer(
-        product: productsEntities[0],
+        product: productsEntities[3],
       ),
     );
   }
