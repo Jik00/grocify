@@ -5,15 +5,16 @@ part 'fav_state.dart';
 
 class FavCubit extends Cubit<FavState> {
   final FavRepo favRepo;
+  final String userId;
 
-  FavCubit({required this.favRepo}) : super(FavInitial());
+  FavCubit({required this.favRepo, required this.userId}) : super(FavInitial());
 
   Set<String> _favs = {};
 
   Future<void> loadFav() async {
     emit(FavLoading());
 
-    final result = await favRepo.loadFav();
+    final result = await favRepo.loadFav(userId);
 
     result.fold(
       (failure) => emit(FavError(failure.message)),
@@ -40,7 +41,7 @@ class FavCubit extends Cubit<FavState> {
     _favs = updatedFavs;
     emit(FavLoaded(updatedFavs));
 
-    final result = await favRepo.toggleFav(productId, originalFavs);
+    final result = await favRepo.toggleFav(productId, originalFavs, userId);
 
     result.fold(
       (failure) {

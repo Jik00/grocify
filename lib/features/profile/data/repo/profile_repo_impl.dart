@@ -17,19 +17,18 @@ class ProfileRepoImpl extends ProfileRepo {
       required HiveProfileDataSource localDataSource})
       : _localDataSource = localDataSource;
 
-  @override
-  Future<Either<Failure, ProfileEntity>> getProfile(String userId) async {
+
+    @override
+    Future<Either<Failure, ProfileEntity>> getProfile(String userId) async {
     try {
       log("Fetching profile for userId: $userId");
 
-      final data = await supabaseDataSource.fetchDataBy(
-          tableName: kSupaProfilesTable, query: 'id', value: userId);
+      final data = await supabaseDataSource.fetchSingleById(
+          tableName: kSupaProfilesTable, id: userId);
 
-      final profile = ProfileEntity.fromMap(data.first);
+      await _localDataSource.cacheProfile(ProfileEntity.fromMap(data));
 
-      await _localDataSource.cacheProfile(profile);
-
-      return Right(profile);
+      return Right( ProfileEntity.fromMap(data));
     } catch (e) {
       log("Error fetching profile: $e");
       return Left(CustomException("Failed to fetch profile"));
@@ -45,9 +44,4 @@ class ProfileRepoImpl extends ProfileRepo {
       return Left(CustomException("No cached profile found"));
     }
   }
-  // @override
-  // Future<void> updateProfile(ProfileEntity profile) async {
-  //   final updated = await supabaseDataSource.updataData(tableName: kSupaProfilesTable, query: 'id', value: profile.id, newData: profile as Map<String, dynamic>);
-  //   await _localDataSource.cacheProfile(updated as ProfileEntity);
-  // }
 }

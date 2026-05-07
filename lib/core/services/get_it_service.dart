@@ -50,8 +50,11 @@ void setupGetIt() async {
     AuthController(getIt<CheckAuthStatusUseCase>(), getIt<ProfileRepo>()),
   );
 
-  getIt.registerFactory<FavCubit>(
-    () => FavCubit(favRepo: getIt<FavRepo>()),
+  getIt.registerFactoryParam<FavCubit, String, dynamic>(
+    (userId, _) => FavCubit(
+      userId: userId,
+      favRepo: getIt<FavRepo>(),
+    ),
   );
 
   getIt.registerFactory<CartCubit>(

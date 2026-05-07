@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocify/core/helper_functions/dummy_user.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/utils/context_extensions.dart';
-import 'package:grocify/core/utils/globals.dart';
+import 'package:grocify/features/auth/presentation/manger/auth_controller/auth_controller.dart';
 import 'package:grocify/features/profile/domain/entities/profile_entity.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -11,7 +11,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ProfileEntity profile = globalProfile ?? dummyProfile;
+    ProfileEntity profile = context.read<AuthController>().currentProfile!;
 
     return Row(
       children: [

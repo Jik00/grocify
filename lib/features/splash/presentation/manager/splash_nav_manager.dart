@@ -1,42 +1,47 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dart:async';
+
 import 'package:grocify/core/services/shared_preferences_singleton.dart';
 import 'package:grocify/core/utils/constants.dart';
-import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
+import 'package:grocify/features/auth/presentation/manger/auth_controller/auth_controller.dart';
 import 'package:grocify/features/auth/presentation/views/signin_view.dart';
 import 'package:grocify/features/home/presentation/views/main_layout.dart';
 import 'package:grocify/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashNavManager {
-  final AuthRepo _authRepo;
+  final AuthController _authController;
 
   static const minDisplayDuration = Duration(seconds: 4);
 
-  SplashNavManager(this._authRepo);
+  SplashNavManager(this._authController);
 
   Future<String> determineNextRoute() async {
     await Future.delayed(minDisplayDuration);
 
     final isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
+    if (!isOnboardingSeen) return OnboardingView.routeName;
 
-    if (!isOnboardingSeen) {
-      return OnboardingView.routeName;
+    // Wait for auth to resolve if still unknown
+    if (_authController.isUnknown) {
+      await _waitForAuthResolution();
     }
 
-    final currentUser = await _authRepo.getCurrentUser();
-    final isAuthenticated = currentUser != null;
+    return _authController.isAuthenticated
+        ? MainLayout.routeName
+        : SignInView.routeName;
+  }
 
-    if (isAuthenticated) {
-      // ✅ Profile will be loaded automatically by AuthController
-      // AuthController listens to auth changes and fetches profile
-      return MainLayout.routeName;
+  Future<void> _waitForAuthResolution() async {
+    final completer = Completer<void>();
+
+    void listener() {
+      if (!_authController.isUnknown) {
+        _authController.removeListener(listener);
+        completer.complete();
+      }
     }
 
-    return SignInView.routeName;
+    _authController.addListener(listener);
+    return completer.future;
   }
 }
 
-extension SplashNavigationManagerExtension on BuildContext {
-  SplashNavManager get splashNavigationManager =>
-      SplashNavManager(read<AuthRepo>());     
-}

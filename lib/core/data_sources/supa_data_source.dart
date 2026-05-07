@@ -109,4 +109,19 @@ class SupabaseDataSource extends DataSource {
       rethrow;
     }
   }
+
+  @override
+  Future<Map<String, dynamic>> fetchSingleById({
+    required String tableName,
+    required String id,
+  }) async {
+    try {
+      final response =
+          await supabase.from(tableName).select().eq('id', id).single();
+      return response;
+    } catch (e) {
+      log("Error fetching single record: $e");
+      rethrow;
+    }
+  }
 }

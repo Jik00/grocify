@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/get_it_service.dart';
 import 'package:grocify/core/utils/app_images.dart';
-import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
+import 'package:grocify/features/auth/presentation/manger/auth_controller/auth_controller.dart';
 import 'package:grocify/features/splash/presentation/manager/splash_nav_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -67,7 +67,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   Future<void> _navigateAfterSplash() async {
 
-    final manager = SplashNavManager(getIt<AuthRepo>());
+    final manager = SplashNavManager(getIt<AuthController>());
     
     final nextRoute = await manager.determineNextRoute();
     

@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:grocify/features/auth/domain/usecases/check_auth_status.dart';
 import 'package:grocify/features/profile/domain/repo/profile_repo.dart';
 import 'package:grocify/features/profile/domain/entities/profile_entity.dart';
-import 'package:grocify/core/utils/globals.dart';
 
 class AuthController extends ChangeNotifier {
   final CheckAuthStatusUseCase _checkAuthStatusUseCase;
@@ -10,6 +9,7 @@ class AuthController extends ChangeNotifier {
 
   AuthStatus _status = AuthStatus.unknown;
   ProfileEntity? _currentProfile;
+  String? _userId;
 
   AuthController(this._checkAuthStatusUseCase, this._profileRepo) {
     _listenToAuthChanges();
@@ -17,6 +17,7 @@ class AuthController extends ChangeNotifier {
 
   AuthStatus get status => _status;
   ProfileEntity? get currentProfile => _currentProfile;
+  String? get userId => _userId;
   bool get isAuthenticated => _status == AuthStatus.authenticated;
   bool get isUnauthenticated => _status == AuthStatus.unauthenticated;
   bool get isUnknown => _status == AuthStatus.unknown;
@@ -25,46 +26,35 @@ class AuthController extends ChangeNotifier {
     _checkAuthStatusUseCase.execute().listen((status) async {
       _status = status;
 
-      debugPrint('Auth status changed: $_status');
-
       if (status == AuthStatus.authenticated) {
-        final currentUser =
-            await _checkAuthStatusUseCase.authRepo.getCurrentUser();
-        if (currentUser != null) {
-          globalUserId = currentUser.uId;
-          await _loadProfile();
-
-          // Also set profile globally
-          if (_currentProfile != null) {
-            globalProfile = _currentProfile;
-          }
-        }
-      } else if (status == AuthStatus.unauthenticated) {
-        globalUserId = null;
-        globalProfile = null;
+        await _onAuthenticated();
+      } else {
+        _onUnauthenticated();
       }
 
       notifyListeners();
     });
   }
 
-  Future<void> _loadProfile() async {
+  Future<void> _onAuthenticated() async {
     try {
-      final currentUser =
-          await _checkAuthStatusUseCase.authRepo.getCurrentUser();
-      if (currentUser != null) {
-        final result = await _profileRepo.getProfile(currentUser.uId);
-        result.fold(
-          (failure) => throw ('Profile load failed: $failure'),
-          (profile) {
-            _currentProfile = profile;
-            globalProfile = profile;
-            notifyListeners();
-          },
-        );
-      }
+      final user = await _checkAuthStatusUseCase.authRepo.getCurrentUser();
+      if (user == null) return;
+
+      _userId = user.uId;
+
+      final result = await _profileRepo.getProfile(user.uId);
+      result.fold(
+        (failure) => debugPrint('Profile load failed: $failure'),
+        (profile) => _currentProfile = profile,
+      );
     } catch (e) {
-      throw ('Error loading profile: $e');
+      debugPrint('Error during auth setup: $e');
     }
+  }
+
+  void _onUnauthenticated() {
+    _userId = null;
+    _currentProfile = null;
   }
 }
