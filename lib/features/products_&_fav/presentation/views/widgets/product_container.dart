@@ -4,18 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/entities/product_entity.dart';
-import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/deatils_view.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/fav_icon.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/plus_icon.dart';
 import 'package:grocify/generated/l10n.dart';
 
 class ProductContainer extends StatefulWidget {
-  const ProductContainer({super.key, required this.product, required this.onAddToCart});
+  const ProductContainer(
+      {super.key, required this.product, required this.onAddToCart});
 
   final ProductEntity product;
   final Function(GlobalKey) onAddToCart;
-
 
   @override
   State<ProductContainer> createState() => _ProductContainerState();
@@ -90,15 +90,16 @@ class _ProductContainerState extends State<ProductContainer> {
           Positioned(
             right: 0,
             bottom: 60.h,
-            child: BlocListener<CartCubit, CartState>(
+            child: BlocListener<CartItemCubit, CartItemState>(
               listener: (context, state) {
-                if (state is CartItemAdded && state.productId == widget.product.id ) {
+                if (state is CartItemSyncing &&
+                    state.productId == widget.product.id) {
                   widget.onAddToCart(gkItemImg);
                 }
               },
               child: PlusIcon(
                 onTap: () {
-                  context.read<CartCubit>().addToCart(widget.product);
+                  context.read<CartItemCubit>().addToCart(widget.product);
                 },
               ),
             ),

@@ -7,7 +7,7 @@ import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
 import 'package:grocify/features/auth/domain/usecases/check_auth_status.dart';
 import 'package:grocify/features/cart/data/cart_repo_impl.dart';
 import 'package:grocify/features/cart/domain/entities/repos/cart_repo.dart';
-import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
 import 'package:grocify/features/products_&_fav/data/repo/fav_repo_impl.dart';
 import 'package:grocify/features/products_&_fav/domain/repo/fav_repo.dart';
 import 'package:grocify/features/products_&_fav/presentation/manager/fav_cubit/fav_cubit.dart';
@@ -24,11 +24,9 @@ void setupGetIt() async {
   getIt.registerSingleton(SupabaseDataSource(supabase));
   getIt.registerSingleton(HiveProfileDataSource());
 
-
   /// services \\\
   getIt.registerSingleton<SupabaseAuthService>(SupabaseAuthService());
 
-  
   /// repos \\\
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(supabaseAuthService: getIt<SupabaseAuthService>()),
@@ -53,17 +51,15 @@ void setupGetIt() async {
     ),
   );
 
-  
-  
   /// use cases \\\
   getIt.registerSingleton<CheckAuthStatusUseCase>(
     CheckAuthStatusUseCase(getIt<AuthRepo>()),
   );
 
-  
   /// cubits \\\
   getIt.registerSingleton<AuthController>(
-    AuthController(getIt<CheckAuthStatusUseCase>(), getIt<ProfileRepo>(), getIt<HiveProfileDataSource>()),
+    AuthController(getIt<CheckAuthStatusUseCase>(), getIt<ProfileRepo>(),
+        getIt<HiveProfileDataSource>()),
   );
 
   getIt.registerFactoryParam<FavCubit, String, dynamic>(
@@ -73,11 +69,10 @@ void setupGetIt() async {
     ),
   );
 
-  getIt.registerFactoryParam<CartCubit, String, dynamic>(
-    (userId, _) => CartCubit(
+  getIt.registerFactoryParam<CartItemCubit, String, dynamic>(
+    (userId, _) => CartItemCubit(
       userId: userId,
       cartRepo: getIt<CartRepo>(),
     ),
   );
-
 }
