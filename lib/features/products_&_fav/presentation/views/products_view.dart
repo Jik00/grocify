@@ -18,26 +18,10 @@ class ProductsView extends StatefulWidget {
 class _ProductsViewState extends State<ProductsView> {
   @override
   Widget build(BuildContext context) {
-    return AddToCartAnimation(
-      cartKey: gkCart,
-      height: 20,
-      width: 20,
-      opacity: 0.85,
-      dragAnimation: const DragToCartAnimationOptions(
-        rotation: false,
-        duration: Duration(milliseconds: 600),
-      ),
-      jumpAnimation: const JumpAnimationOptions(
-        duration: Duration(milliseconds: 300),
-      ),
-      createAddToCartAnimation: (animation) {
-        runAddToCartAnimation = animation;
-      },
-      child: Scaffold(
-        appBar: productsAppBar(catId: widget.catId),
-        extendBody: true,
-        body: const ProductsViewBody(),
-      ),
+    return Scaffold(
+      appBar: productsAppBar(catId: widget.catId),
+      extendBody: true,
+      body: const ProductsViewBody(),
     );
   }
 }

@@ -4,16 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/utils/context_extensions.dart';
 import 'package:grocify/features/auth/presentation/manger/auth_controller/auth_controller.dart';
-import 'package:grocify/features/profile/domain/entities/profile_entity.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ProfileEntity profile = context.read<AuthController>().currentProfile!;
-
-    return Row(
+    final profile = context.watch<AuthController>().currentProfile;
+    
+    return (profile == null)? SizedBox.shrink()
+    
+    : Row(
       children: [
         CircleAvatar(
           radius: 30.r,
