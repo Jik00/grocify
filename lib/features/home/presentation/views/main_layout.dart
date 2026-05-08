@@ -21,15 +21,19 @@ class _MainLayoutState extends State<MainLayout> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final userId = context.read<AuthController>().userId;
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) => getIt<FavCubit>(
-            param1: context.read<AuthController>().userId,
+            param1: userId,
           )..loadFav(),
         ),
         BlocProvider(
-          create: (context) => getIt<CartCubit>(),
+
+          create: (context) => getIt<CartCubit>(
+            param1: userId,
+          ),
         ),
       ],
       child: Scaffold(
