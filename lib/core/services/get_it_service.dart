@@ -63,7 +63,7 @@ void setupGetIt() async {
   
   /// cubits \\\
   getIt.registerSingleton<AuthController>(
-    AuthController(getIt<CheckAuthStatusUseCase>(), getIt<ProfileRepo>()),
+    AuthController(getIt<CheckAuthStatusUseCase>(), getIt<ProfileRepo>(), getIt<HiveProfileDataSource>()),
   );
 
   getIt.registerFactoryParam<FavCubit, String, dynamic>(

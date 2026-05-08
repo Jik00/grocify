@@ -1,17 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:grocify/features/auth/domain/usecases/check_auth_status.dart';
+import 'package:grocify/features/profile/data/datasource/hive_profile_datasource.dart';
 import 'package:grocify/features/profile/domain/repo/profile_repo.dart';
 import 'package:grocify/features/profile/domain/entities/profile_entity.dart';
 
 class AuthController extends ChangeNotifier {
   final CheckAuthStatusUseCase _checkAuthStatusUseCase;
   final ProfileRepo _profileRepo;
+  final HiveProfileDataSource _hiveProfileDataSource;
 
   AuthStatus _status = AuthStatus.unknown;
   ProfileEntity? _currentProfile;
   String? _userId;
 
-  AuthController(this._checkAuthStatusUseCase, this._profileRepo) {
+  AuthController(this._checkAuthStatusUseCase, this._profileRepo, this._hiveProfileDataSource) {
     _listenToAuthChanges();
   }
 
@@ -43,10 +45,21 @@ class AuthController extends ChangeNotifier {
 
       _userId = user.uId;
 
+      final cached = _hiveProfileDataSource.getCachedProfileSync(user.uId);
+      if (cached != null) {
+        _currentProfile = cached;
+        notifyListeners(); // show UI immediately with cached data
+      }
+
+      // ✅ 2. Then fetch fresh from network & update cache
       final result = await _profileRepo.getProfile(user.uId);
       result.fold(
         (failure) => debugPrint('Profile load failed: $failure'),
-        (profile) => _currentProfile = profile,
+        (profile) {
+          _currentProfile = profile;
+          _hiveProfileDataSource.cacheProfile(profile); // keep cache fresh
+          notifyListeners();
+        },
       );
     } catch (e) {
       debugPrint('Error during auth setup: $e');
