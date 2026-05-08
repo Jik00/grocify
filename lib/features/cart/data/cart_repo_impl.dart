@@ -72,4 +72,26 @@ class CartRepoImpl extends CartRepo {
     }
   }
   
+  @override
+  Future<Either<Failure, void>> updateCart(String productId, String userId, String quantity) async {
+    try {
+      log("updating cart");
+      await supabaseDataSource.updataData(
+          tableName: kSupaCartTable,
+          query: kUserIdQuery,
+          value: userId,
+          query2: kProductIdQuery,
+          value2: productId,
+
+          newData: {kQuantityQuery: quantity});
+      return const Right(null);
+    } catch (e) {
+      log("error updating cart $e");
+      return Left(ServerFailure('Failed to update cart: ${e.toString()}'));
+    }
+    
+  }
+
+  
+  
 }

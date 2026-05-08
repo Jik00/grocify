@@ -16,7 +16,7 @@ abstract class DataSource {
     required String value,
   });
 
-  Future<Map<String, dynamic>> updataData ({
+  Future<void> updataData ({
     required String tableName,
     required String query,
     required String value,

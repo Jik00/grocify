@@ -72,12 +72,18 @@ class SupabaseDataSource extends DataSource {
   }
   
   @override
-  Future<Map<String, dynamic>> updataData({required String tableName, required String query, required String value, required Map<String, dynamic> newData}) async{
+  Future<void> updataData({required String tableName, required String query, required String value, required Map<String, dynamic> newData, String? query2,
+    String? value2,}) async{
     try {
-      final response = await supabase
-          .from(tableName)
-          .update(newData)
-          .eq(query, value);
+
+      var request = supabase.from(tableName).update(newData).eq(query, value);
+      
+      if (query2 != null && value2 != null) {
+        request = request.eq(query2, value2);
+      }
+
+
+      final response = await request;
 
       log("Updated data: $response");
       return response;
