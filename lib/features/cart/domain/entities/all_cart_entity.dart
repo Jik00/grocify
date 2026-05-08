@@ -4,32 +4,31 @@ import 'package:grocify/features/cart/domain/entities/cart_item_entity.dart';
 class AllCartEntity {
   final List<CartItemEntity> cartItems;
 
-  AllCartEntity({
-    required this.cartItems,
-  });
+  const AllCartEntity({required this.cartItems});
 
-  void addCartItem(CartItemEntity cartItem) => cartItems.add(cartItem);
+  AllCartEntity addCartItem(CartItemEntity item) =>
+      copyWith(cartItems: [...cartItems, item]);
 
-  void removeCartItem(CartItemEntity cartItem) => cartItems.remove(cartItem);
+  AllCartEntity removeCartItem(CartItemEntity item) =>
+      copyWith(cartItems: cartItems.where((e) => e != item).toList());
 
-  void clearCart() => cartItems.clear();
+  AllCartEntity updateCartItem(CartItemEntity updated) =>
+      copyWith(cartItems: cartItems.map((e) => e.product.id == updated.product.id ? updated : e).toList());
 
-  bool doesExist(ProductEntity product) {
-    return cartItems.any((element) => element.product.id == product.id);
-  }
+  AllCartEntity clearCart() => copyWith(cartItems: []);
 
-  CartItemEntity getCartItem(ProductEntity product) {
-    return cartItems.firstWhere(
-      (element) => element.product.id == product.id,
-      orElse: () => CartItemEntity(product: product, count: 1),
-    );
-  }
+  bool doesExist(ProductEntity product) =>
+      cartItems.any((e) => e.product.id == product.id);
 
-  double calculateTotal() {
-    double total = 0.0;
-    for (var element in cartItems) {
-      total += element.total;
-    }
-    return total;
-  }
+  CartItemEntity getCartItem(ProductEntity product) =>
+      cartItems.firstWhere(
+        (e) => e.product.id == product.id,
+        orElse: () => CartItemEntity(product: product),
+      );
+
+  AllCartEntity copyWith({List<CartItemEntity>? cartItems}) =>
+      AllCartEntity(cartItems: cartItems ?? this.cartItems);
+
+  double calculateTotal() =>
+      cartItems.fold(0.0, (sum, e) => sum + e.total);
 }

@@ -1,6 +1,4 @@
-import 'package:add_to_cart_animation/add_to_cart_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:grocify/core/utils/globals.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/products_app_bar.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/products_view_body.dart';
 
