@@ -1,20 +1,25 @@
+import 'package:equatable/equatable.dart';
 import 'package:grocify/core/entities/product_entity.dart';
 
-class CartItemEntity {
-
+class CartItemEntity extends Equatable {
   final ProductEntity product;
-  int count;
+  final int count;
 
-  CartItemEntity({required this.product, this.count =1});
+  const CartItemEntity({required this.product, this.count = 1});
 
-  String get total => ( int.parse(product.price) * count).toStringAsFixed(2);
+  double get total => (int.parse(product.price) * count).roundToDouble();
 
-  void increaseCount() => count + 1;
+  CartItemEntity increaseCount() => copyWith(count: count + 1);
 
-  void decreaseCount(){ 
-    
-    (count > 1)? count - 1 : count ;
-    
+  CartItemEntity decreaseCount() => count > 1 ? copyWith(count: count - 1) : this;
+
+  CartItemEntity copyWith({ProductEntity? product, int? count}) {
+    return CartItemEntity(
+      product: product ?? this.product,
+      count: count ?? this.count,
+    );
   }
-  
+
+  @override
+  List<Object?> get props => [product];
 }
