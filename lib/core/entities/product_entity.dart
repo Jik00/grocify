@@ -1,20 +1,24 @@
+import 'package:equatable/equatable.dart';
 import 'package:grocify/core/utils/app_images.dart';
 import 'package:grocify/generated/l10n.dart';
 
-class ProductEntity {
+class ProductEntity extends Equatable {
   final String name;
   final String price;
   final String image;
   final String description;
   final String id;
 
-  ProductEntity({
+  const ProductEntity({
     required this.name,
     required this.price,
     required this.image,
     required this.description,
     required this.id,
   });
+  
+  @override
+  List<Object?> get props => [id];
 }
 
 List<ProductEntity> get productsEntities => [
