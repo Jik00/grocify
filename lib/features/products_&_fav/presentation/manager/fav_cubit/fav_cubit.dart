@@ -29,17 +29,13 @@ class FavCubit extends Cubit<FavState> {
     
     final originalFavs = Set<String>.from(_favs);
 
-    // Optimistic update
-    final updatedFavs = Set<String>.from(_favs);
-
-    if (updatedFavs.contains(productId)) {
-      updatedFavs.remove(productId);
+    if (_favs.contains(productId)) {
+      _favs.remove(productId);
     } else {
-      updatedFavs.add(productId);
+      _favs.add(productId);
     }
-
-    _favs = updatedFavs;
-    emit(FavLoaded(updatedFavs));
+    
+    emit(FavLoaded(_favs));
 
     final result = await favRepo.toggleFav(productId, originalFavs, userId);
 

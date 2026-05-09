@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocify/core/helper_functions/filter_fav_products_entities.dart';
+import 'package:grocify/core/helper_functions/filter_products_entities_by_id.dart';
 import 'package:grocify/core/widgets/build_error_snack_bar.dart';
 import 'package:grocify/core/widgets/custom_loading_bar.dart';
 import 'package:grocify/features/products_&_fav/presentation/manager/fav_cubit/fav_cubit.dart';
@@ -31,7 +31,7 @@ class FavConsumer extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.0.w),
             child: CustomScrollView(
               slivers: [
-                ProductsGrid(products: filterFavProductsEntities(state.favs)),
+                ProductsGrid(products: filterProductsEntitiesById(state.favs)),
                 SliverToBoxAdapter(
                   child: SizedBox(
                     height: 90.h,

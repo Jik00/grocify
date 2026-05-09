@@ -7,7 +7,7 @@ import 'package:grocify/features/auth/domain/repos/auth_repo.dart';
 import 'package:grocify/features/auth/domain/usecases/check_auth_status.dart';
 import 'package:grocify/features/cart/data/cart_repo_impl.dart';
 import 'package:grocify/features/cart/domain/entities/repos/cart_repo.dart';
-import 'package:grocify/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:grocify/features/products_&_fav/data/repo/fav_repo_impl.dart';
 import 'package:grocify/features/products_&_fav/domain/repo/fav_repo.dart';
 import 'package:grocify/features/products_&_fav/presentation/manager/fav_cubit/fav_cubit.dart';
@@ -19,7 +19,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 final getIt = GetIt.instance;
 final supabase = Supabase.instance.client;
 
-void setupGetIt() async {
+void setupGetIt() {
   /// data source \\\
   getIt.registerSingleton(SupabaseDataSource(supabase));
   getIt.registerSingleton(HiveProfileDataSource());
@@ -69,8 +69,8 @@ void setupGetIt() async {
     ),
   );
 
-  getIt.registerFactoryParam<CartItemCubit, String, dynamic>(
-    (userId, _) => CartItemCubit(
+  getIt.registerFactoryParam<CartCubit, String, dynamic>(
+    (userId, _) => CartCubit(
       userId: userId,
       cartRepo: getIt<CartRepo>(),
     ),

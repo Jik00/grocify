@@ -85,7 +85,7 @@ class SupabaseDataSource extends DataSource {
 
       final response = await request;
 
-      log("Updated data: $response");
+      //log("Updated data: $response");
       return response;
     } catch (e) {
       log("Error updating data: $e");
