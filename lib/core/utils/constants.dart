@@ -18,5 +18,6 @@ const String kSupaFavTable = 'favorites';
 const String kSupaCartTable = 'cart_items';
 const String kUserIdQuery = "user_id";
 const String kProductIdQuery = "product_id";
+const String kQuantityQuery = "quantity";
 
 const String kHiveProfilesBox = 'profiles';

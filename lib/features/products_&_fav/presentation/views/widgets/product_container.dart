@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/navigation_service.dart';
 import 'package:grocify/core/utils/app_colors.dart';
 import 'package:grocify/core/entities/product_entity.dart';
-import 'package:grocify/features/cart/presentation/manager/cart_item_cubit/cart_item_cubit.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/deatils_view.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/fav_icon.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/plus_icon.dart';
@@ -90,16 +90,16 @@ class _ProductContainerState extends State<ProductContainer> {
           Positioned(
             right: 0,
             bottom: 60.h,
-            child: BlocListener<CartItemCubit, CartItemState>(
+            child: BlocListener<CartCubit, CartState>(
               listener: (context, state) {
-                if (state is CartItemSyncing &&
+                if (state is CartSyncing &&
                     state.productId == widget.product.id) {
                   widget.onAddToCart(gkItemImg);
                 }
               },
               child: PlusIcon(
                 onTap: () {
-                  context.read<CartItemCubit>().addToCart(widget.product);
+                  context.read<CartCubit>().addToCart(widget.product);
                 },
               ),
             ),
