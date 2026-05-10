@@ -59,10 +59,12 @@ class CartCubit extends Cubit<CartState> {
       if (isExisting) {
         await cartRepo.updateCart(
             product.id, userId, allCartEntity.getCartItem(product).count);
+        emit(CartItemUpdate(allCartEntity,
+            productId: product.id)); // stay as item update
       } else {
         await cartRepo.addToCart(product.id, userId);
+        emit(CartReady(allCartEntity)); // new item added, list rebuilds
       }
-      emit(CartReady(allCartEntity));
     } catch (e) {
       allCartEntity = previousCart;
       emit(CartSyncFailed(previousCart, error: e.toString()));
@@ -82,11 +84,12 @@ class CartCubit extends Cubit<CartState> {
     try {
       if (previousCart.getCartItem(product).count == 1) {
         await cartRepo.removeFromCart(product.id, userId);
+        emit(CartReady(allCartEntity));
       } else {
         await cartRepo.updateCart(
             product.id, userId, allCartEntity.getCartItem(product).count);
+        emit(CartItemUpdate(allCartEntity, productId: product.id));
       }
-      emit(CartReady(allCartEntity));
     } catch (e) {
       allCartEntity = previousCart;
       emit(CartSyncFailed(previousCart, error: e.toString()));

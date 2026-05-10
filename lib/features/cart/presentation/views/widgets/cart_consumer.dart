@@ -1,11 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocify/core/widgets/build_error_snack_bar.dart';
-import 'package:grocify/core/widgets/custom_loading_bar.dart';
 import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:grocify/features/cart/presentation/views/widgets/cart_items_list.dart';
 import 'package:grocify/features/cart/presentation/views/widgets/cart_view_body.dart';
 import 'package:grocify/features/cart/presentation/views/widgets/no_cart.dart';
+import 'package:grocify/generated/l10n.dart';
 
 class CartConsumer extends StatelessWidget {
   const CartConsumer({super.key});
@@ -19,11 +20,15 @@ class CartConsumer extends StatelessWidget {
               context, "${S.current.failedToUpdate} ${state.error}");
         }
       },
+      buildWhen: (previous, current) {
+        if (current is CartItemUpdate) return false;
+        return current.cart.cartItems.length != previous.cart.cartItems.length;
+      },
       builder: (context, state) {
         log("building list here");
 
         if (state is CartReady && state.cart.cartItems.isEmpty) {
-            return const NoCart();
+          return const NoCart();
         }
         return CartViewBody(cart: state.cart);
       },
