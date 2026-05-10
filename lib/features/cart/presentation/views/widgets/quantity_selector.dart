@@ -54,6 +54,7 @@ class QuantitySelector extends StatelessWidget {
         // Plus button
         PlusIcon(
           onTap: () {
+            fireCartAnimation = false;
             context.read<CartCubit>().addToCart(cartItemEntity.product);
           },
           size: w,
