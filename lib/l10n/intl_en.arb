@@ -93,5 +93,6 @@
   "total": "Total",
   "checkout": "Checkout",
   "continueShopping": "Continue Shopping",
-  "noCart": "You have no items in your cart"
+  "noCart": "You have no items in your cart",
+  "failedToUpdate": "Failed to update cart"
 }

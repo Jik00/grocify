@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
+import 'package:grocify/core/utils/globals.dart';
 import 'package:grocify/core/widgets/custom_container.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/quantity_container.dart';
 import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/generated/l10n.dart';
@@ -93,8 +96,14 @@ class DetailsViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 QuantityContainer(),
-                CustomContainer(
-                    title: S.current.addToCart, w: 139, h: 49, r: 40, sp: 16),
+                GestureDetector(
+                  onTap: () {
+                  fireCartAnimation = true;
+                  context.read<CartCubit>().addToCart(product);
+                },
+                  child: CustomContainer(
+                      title: S.current.addToCart, w: 139, h: 49, r: 40, sp: 16),
+                ),
               ],
             ),
             SizedBox(height: 100.h),

@@ -67,6 +67,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "An account already exists with this email.",
     ),
+    "failedToUpdate": MessageLookupByLibrary.simpleMessage(
+      "Failed to update cart",
+    ),
     "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "frozen": MessageLookupByLibrary.simpleMessage("Frozen"),

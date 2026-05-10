@@ -15,20 +15,17 @@ class CartConsumer extends StatelessWidget {
     return BlocConsumer<CartCubit, CartState>(
       listener: (context, state) {
         if (state is CartSyncFailed) {
-          buildErrorSnackBar(context, state.error);
+          buildErrorSnackBar(
+              context, "${S.current.failedToUpdate} ${state.error}");
         }
       },
       builder: (context, state) {
-        // if (state is CartLoading ) {
-        //   return const Center(child: CustomLoadingBar());
-        // }
-        if (state is CartReady) {
-          if (state.cart.cartItems.isEmpty) {
+        log("building list here");
+
+        if (state is CartReady && state.cart.cartItems.isEmpty) {
             return const NoCart();
-          }else 
-          {return CartViewBody(cart: state.cart);}
         }
-        return const SizedBox();
+        return CartViewBody(cart: state.cart);
       },
     );
   }

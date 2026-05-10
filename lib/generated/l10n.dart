@@ -758,6 +758,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to update cart`
+  String get failedToUpdate {
+    return Intl.message(
+      'Failed to update cart',
+      name: 'failedToUpdate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
