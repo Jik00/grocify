@@ -96,7 +96,7 @@ class CartRepoImpl extends CartRepo {
 
   @override
   Future<Either<Failure, void>> updateCart(
-      String productId, String userId, String quantity) async {
+      String productId, String userId, int quantity) async {
     try {
       log("updating cart");
       await supabaseDataSource.updataData(

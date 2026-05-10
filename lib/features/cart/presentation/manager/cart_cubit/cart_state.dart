@@ -28,6 +28,13 @@ class CartSyncing extends CartState {
   @override
   List<Object?> get props => [cart, productId];
 }
+class CartSyncingAding extends CartState {
+  final String productId;
+  const CartSyncingAding(super.cart, {required this.productId});
+
+  @override
+  List<Object?> get props => [cart, productId];
+}
 
 // sync failed, rolled back
 class CartSyncFailed extends CartState {
@@ -36,8 +43,4 @@ class CartSyncFailed extends CartState {
 
   @override
   List<Object?> get props => [cart, error];
-}
-
-class CartCleared extends CartState {
-  const CartCleared() : super(const AllCartEntity(cartItems: []));
 }

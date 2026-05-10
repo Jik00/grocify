@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocify/core/entities/product_entity.dart';
-import 'package:grocify/core/widgets/quantity_selector.dart';
+import 'package:grocify/features/cart/presentation/views/widgets/quantity_selector.dart';
+import 'package:grocify/features/cart/domain/entities/cart_item_entity.dart';
 
 class CartItemContainer extends StatelessWidget {
-  const CartItemContainer({super.key, required this.product});
+  const CartItemContainer({super.key, required this.cartItemEntity});
 
-  final ProductEntity product;
+  final CartItemEntity cartItemEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class CartItemContainer extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
                 image: DecorationImage(
-                  image: AssetImage(product.image),
+                  image: AssetImage(cartItemEntity.product.image),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -47,11 +47,11 @@ class CartItemContainer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 200.w),
+                  constraints: BoxConstraints(maxWidth: 180.w),
                   child: Text(
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    product.name,
+                    cartItemEntity.product.name,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class CartItemContainer extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  product.price.toString(),
+                  cartItemEntity.product.price.toString(),
                   style: TextStyle(
                     fontSize: 14.sp,
                     color: Colors.grey[600],
@@ -67,9 +67,16 @@ class CartItemContainer extends StatelessWidget {
                 ),
               ],
             ),
-            Flexible(
-              child: QuantitySelector(w: 20, sp: 14),
+            const Spacer(),
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: 70.w),
+              child: QuantitySelector(
+                w: 20,
+                sp: 14,
+                cartItemEntity: cartItemEntity,
+              ),
             ),
+            const Spacer(),
           ],
         ),
       ),

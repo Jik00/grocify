@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/utils/app_colors.dart';
-import 'package:grocify/features/cart/presentation/views/widgets/cart_slidable.dart';
+import 'package:grocify/features/cart/presentation/views/widgets/cart_consumer.dart';
 import 'package:grocify/features/products_&_fav/presentation/views/widgets/title_row.dart';
 
 class CartView extends StatelessWidget {
@@ -18,7 +18,7 @@ class CartView extends StatelessWidget {
         centerTitle: true,
         title: const TitleRow(),
       ),
-      body: CartSlidable(),
+      body: CartConsumer(),
     );
   }
 }

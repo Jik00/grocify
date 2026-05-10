@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:grocify/generated/l10n.dart';
 
 class TitleRow extends StatelessWidget {
@@ -19,7 +21,7 @@ class TitleRow extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            
+            context.read<CartCubit>().clearCart();
           },
           child: Row(
             children: [

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -92,8 +94,9 @@ class _ProductContainerState extends State<ProductContainer> {
             bottom: 60.h,
             child: BlocListener<CartCubit, CartState>(
               listener: (context, state) {
-                if (state is CartSyncing &&
+                if (state is CartSyncingAding &&
                     state.productId == widget.product.id) {
+                  
                   widget.onAddToCart(gkItemImg);
                 }
               },

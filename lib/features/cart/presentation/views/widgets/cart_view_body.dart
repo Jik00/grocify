@@ -1,34 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocify/features/cart/domain/entities/all_cart_entity.dart';
+import 'package:grocify/features/cart/presentation/views/widgets/cart_items_list.dart';
 
 class CartViewBody extends StatelessWidget {
-  const CartViewBody({super.key});
+  const CartViewBody({super.key, required this.cart});
+
+  final AllCartEntity cart;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: 
-    
-    EdgeInsets.symmetric( horizontal: 16.w),
-    child: CustomScrollView(
-      slivers: [
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 12.h),
+          CartItemsList(cart: cart),
 
-        SliverToBoxAdapter(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              
-              SizedBox(height: 12.h),
-            ],
-          ),
-        ),
-
-      // SliverToBoxAdapter(
-      //   child: SizedBox(
-      //     height: 90.h,
-      //   ),
-      // ),
-      
-    ],),
+        ],
+      ),
     );
   }
 }
