@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,11 +11,17 @@ import 'package:grocify/features/products_&_fav/presentation/views/widgets/quant
 import 'package:grocify/core/entities/product_entity.dart';
 import 'package:grocify/generated/l10n.dart';
 
-class DetailsViewBody extends StatelessWidget {
+class DetailsViewBody extends StatefulWidget {
   const DetailsViewBody({super.key, required this.product});
 
   final ProductEntity product;
 
+  @override
+  State<DetailsViewBody> createState() => _DetailsViewBodyState();
+}
+
+class _DetailsViewBodyState extends State<DetailsViewBody> {
+  int quantity = 1;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,14 +35,14 @@ class DetailsViewBody extends StatelessWidget {
               onTap: () => Navigator.pop(context),
               child: Center(
                 child: Hero(
-                  tag: '${product.id}img',
+                  tag: '${widget.product.id}img',
                   child: Image.asset(
-                    product.image,
-                    width: (product.id == '3' || product.id == '4')
+                    widget.product.image,
+                    width: (widget.product.id == '3' || widget.product.id == '4')
                         ? 120.w
-                        : (product.id == '6' ||
-                                product.id == '7' ||
-                                product.id == '8')
+                        : (widget.product.id == '6' ||
+                                widget.product.id == '7' ||
+                                widget.product.id == '8')
                             ? 240.w
                             : double.maxFinite,
                     fit: BoxFit.cover,
@@ -49,9 +57,9 @@ class DetailsViewBody extends StatelessWidget {
                 SizedBox(
                   width: 230.w,
                   child: Hero(
-                    tag: '${product.id}name',
+                    tag: '${widget.product.id}name',
                     child: Text(
-                      product.name,
+                      widget.product.name,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 5,
                       style: TextStyle(
@@ -63,9 +71,9 @@ class DetailsViewBody extends StatelessWidget {
                 ),
                 const Spacer(),
                 Hero(
-                  tag: '${product.id}price',
+                  tag: '${widget.product.id}price',
                   child: Text(
-                    '${S.current.egp} ${product.price}',
+                    '${S.current.egp} ${widget.product.price}',
                     style: TextStyle(
                         fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
@@ -84,7 +92,7 @@ class DetailsViewBody extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             Text(
-              product.description,
+              widget.product.description,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.normal,
@@ -95,11 +103,12 @@ class DetailsViewBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                QuantityContainer(),
+                QuantityContainer( onCountChange: (count) => quantity = count,),
                 GestureDetector(
                   onTap: () {
                   fireCartAnimation = true;
-                  context.read<CartCubit>().addToCart(product);
+                  log(quantity.toString());
+                  context.read<CartCubit>().addToCart(widget.product, quantity);
                 },
                   child: CustomContainer(
                       title: S.current.addToCart, w: 139, h: 49, r: 40, sp: 16),

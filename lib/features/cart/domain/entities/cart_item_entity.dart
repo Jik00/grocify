@@ -5,13 +5,13 @@ class CartItemEntity extends Equatable {
   final ProductEntity product;
   final int count;
 
-  const CartItemEntity({required this.product, this.count = 1});
+  const CartItemEntity({required this.product, required this.count});
 
   double get total => (double.parse(product.price) * count).roundToDouble();
 
-  CartItemEntity increaseCount() => copyWith(count: count + 1);
+  CartItemEntity increaseCount( int q ) => copyWith(count:  count + q);
 
-  CartItemEntity decreaseCount() => copyWith(count: count - 1);
+CartItemEntity decreaseCount() => copyWith(count: count - 1);
 
   CartItemEntity copyWith({ProductEntity? product, int? count}) {
     return CartItemEntity(

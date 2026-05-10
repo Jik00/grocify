@@ -16,12 +16,12 @@ class CartRepoImpl extends CartRepo {
 
   @override
   Future<Either<Failure, void>> addToCart(
-      String productId, String userId) async {
+      String productId, String userId, int quantity) async {
     try {
       log("adding to cart");
       await supabaseDataSource.addData(
           tableName: kSupaCartTable,
-          data: {kUserIdQuery: userId, kProductIdQuery: productId});
+          data: {kUserIdQuery: userId, kProductIdQuery: productId, kQuantityQuery: quantity});
       return const Right(null);
     } catch (e) {
       log("error adding to cart $e");
@@ -53,21 +53,23 @@ class CartRepoImpl extends CartRepo {
         for (final p in productsEntities) p.id: p,
       };
 
-      final cartItems = response.map((row) {
-        final productId = row[kProductIdQuery] as String;
-        final product = productsMap[productId];
-        final quantity = row[kQuantityQuery] as int;
+      final cartItems = response
+          .map((row) {
+            final productId = row[kProductIdQuery] as String;
+            final product = productsMap[productId];
+            final quantity = row[kQuantityQuery] as int;
 
-        if (product == null) return null;
+            if (product == null) return null;
 
-        return CartItemEntity(
-          product: product,
-          count: quantity,
-        );
-      }).whereType<CartItemEntity>().toList();
+            return CartItemEntity(
+              product: product,
+              count: quantity,
+            );
+          })
+          .whereType<CartItemEntity>()
+          .toList();
 
       log("fetched ${cartItems.length} cartItems cart items");
-
 
       return Right(AllCartEntity(cartItems: cartItems));
     } catch (e) {

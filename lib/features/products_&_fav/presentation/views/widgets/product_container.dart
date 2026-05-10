@@ -101,7 +101,7 @@ class _ProductContainerState extends State<ProductContainer> {
               child: PlusIcon(
                 onTap: () {
                   fireCartAnimation = true;
-                  context.read<CartCubit>().addToCart(widget.product);
+                  context.read<CartCubit>().addToCart(widget.product, 1);
                 },
               ),
             ),

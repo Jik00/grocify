@@ -69,7 +69,7 @@ class CartItemContainer extends StatelessWidget {
             ),
             const Spacer(),
             ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 70.w),
+              constraints: BoxConstraints(maxWidth: 80.w),
               child: QuantitySelector(
                 w: 20,
                 sp: 14,

@@ -23,7 +23,7 @@ class AllCartEntity {
   CartItemEntity getCartItem(ProductEntity product) =>
       cartItems.firstWhere(
         (e) => e.product.id == product.id,
-        orElse: () => CartItemEntity(product: product),
+        orElse: () => CartItemEntity(product: product, count: 1),
       );
 
   AllCartEntity copyWith({List<CartItemEntity>? cartItems}) =>

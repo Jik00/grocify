@@ -29,7 +29,7 @@ class QuantitySelector extends StatelessWidget {
             context.read<CartCubit>().decrementFromCart(cartItemEntity.product);
           },
           child: Container(
-            width: w.w,
+            width: w .w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(color: Colors.green, width: 1.5.w),
@@ -71,7 +71,7 @@ class QuantitySelector extends StatelessWidget {
         PlusIcon(
           onTap: () {
             fireCartAnimation = false;
-            context.read<CartCubit>().addToCart(cartItemEntity.product);
+            context.read<CartCubit>().addToCart(cartItemEntity.product, 1);
           },
           size: w,
         ),

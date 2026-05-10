@@ -44,14 +44,14 @@ class CartCubit extends Cubit<CartState> {
     );
   }
 
-  Future<void> addToCart(ProductEntity product) async {
+  Future<void> addToCart(ProductEntity product, int quantity) async {
     final previousCart = allCartEntity;
     final isExisting = allCartEntity.doesExist(product);
 
     allCartEntity = isExisting
         ? allCartEntity
-            .updateCartItem(allCartEntity.getCartItem(product).increaseCount())
-        : allCartEntity.addCartItem(CartItemEntity(product: product));
+            .updateCartItem(allCartEntity.getCartItem(product).increaseCount( quantity))
+        : allCartEntity.addCartItem(CartItemEntity(product: product, count: quantity));
 
     emit(CartSyncingAding(allCartEntity, productId: product.id));
 
@@ -62,7 +62,7 @@ class CartCubit extends Cubit<CartState> {
         emit(CartItemUpdate(allCartEntity,
             productId: product.id)); // stay as item update
       } else {
-        await cartRepo.addToCart(product.id, userId);
+        await cartRepo.addToCart(product.id, userId, quantity);
         emit(CartReady(allCartEntity)); // new item added, list rebuilds
       }
     } catch (e) {
@@ -71,13 +71,14 @@ class CartCubit extends Cubit<CartState> {
     }
   }
 
+
   Future<void> decrementFromCart(ProductEntity product) async {
     final previousCart = allCartEntity;
 
     allCartEntity = allCartEntity.getCartItem(product).count > 1
         ? allCartEntity
             .updateCartItem(allCartEntity.getCartItem(product).decreaseCount())
-        : allCartEntity.removeCartItem(CartItemEntity(product: product));
+        : allCartEntity.removeCartItem(CartItemEntity(product: product, count: 1));
 
     emit(CartSyncing(allCartEntity, productId: product.id));
 
@@ -100,7 +101,7 @@ class CartCubit extends Cubit<CartState> {
     final previousCart = allCartEntity;
 
     allCartEntity =
-        allCartEntity.removeCartItem(CartItemEntity(product: product));
+        allCartEntity.removeCartItem(CartItemEntity(product: product, count: 1));
 
     emit(CartSyncing(allCartEntity, productId: product.id));
 
@@ -114,20 +115,20 @@ class CartCubit extends Cubit<CartState> {
     }
   }
 
-  Future<void> updateItemInCart(CartItemEntity cartItem) async {
-    final previousCart = allCartEntity;
+  Future<void> updateItemInCart(String productId) async {
+    // final previousCart = allCartEntity;
 
-    allCartEntity = allCartEntity.updateCartItem(cartItem);
-    emit(CartSyncing(allCartEntity, productId: cartItem.product.id));
+    // allCartEntity = allCartEntity.updateCartItem(cartItem);
+    // emit(CartSyncing(allCartEntity, productId: cartItem.product.id));
 
-    try {
-      await cartRepo.updateCart(cartItem.product.id, userId, cartItem.count);
+    // try {
+    //   await cartRepo.updateCart(cartItem.product.id, userId, cartItem.count);
 
-      emit(CartReady(allCartEntity));
-    } catch (e) {
-      allCartEntity = previousCart;
-      emit(CartSyncFailed(previousCart, error: e.toString()));
-    }
+    //   emit(CartReady(allCartEntity));
+    // } catch (e) {
+    //   allCartEntity = previousCart;
+    //   emit(CartSyncFailed(previousCart, error: e.toString()));
+    // }
   }
 }
 
