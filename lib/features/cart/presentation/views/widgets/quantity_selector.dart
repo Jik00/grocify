@@ -47,12 +47,12 @@ class QuantitySelector extends StatelessWidget {
 
         // Text
         BlocBuilder<CartCubit, CartState>(
-          buildWhen: (previous, current) {
+          buildWhen: (current, previous) {
             return current is CartItemUpdate &&
                 current.productId == cartItemEntity.product.id;
           },
+          
           builder: (context, state) {
-            // Read live count from cubit's allCartEntity, not from the stale passed cartItemEntity
             final cubit = context.read<CartCubit>();
             final liveItem =
                 cubit.allCartEntity.getCartItem(cartItemEntity.product);

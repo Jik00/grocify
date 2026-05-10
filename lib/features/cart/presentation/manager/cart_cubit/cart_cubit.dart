@@ -49,9 +49,11 @@ class CartCubit extends Cubit<CartState> {
     final isExisting = allCartEntity.doesExist(product);
 
     allCartEntity = isExisting
-        ? allCartEntity
-            .updateCartItem(allCartEntity.getCartItem(product).increaseCount( quantity))
-        : allCartEntity.addCartItem(CartItemEntity(product: product, count: quantity));
+        ? allCartEntity.updateCartItem(
+            allCartEntity.getCartItem(product).increaseCount(quantity))
+        : allCartEntity
+            .addCartItem(CartItemEntity(product: product, count: quantity));
+
 
     emit(CartSyncingAding(allCartEntity, productId: product.id));
 
@@ -75,15 +77,19 @@ class CartCubit extends Cubit<CartState> {
   Future<void> decrementFromCart(ProductEntity product) async {
     final previousCart = allCartEntity;
 
-    allCartEntity = allCartEntity.getCartItem(product).count > 1
+    final currentCount = allCartEntity.getCartItem(product).count;
+
+    allCartEntity = currentCount > 1
         ? allCartEntity
             .updateCartItem(allCartEntity.getCartItem(product).decreaseCount())
-        : allCartEntity.removeCartItem(CartItemEntity(product: product, count: 1));
+        : allCartEntity
+            .removeCartItem(CartItemEntity(product: product, count: 1));
 
-    emit(CartSyncing(allCartEntity, productId: product.id));
+    emit(CartSyncing(allCartEntity,
+           productId: product.id));
 
     try {
-      if (previousCart.getCartItem(product).count == 1) {
+      if (currentCount == 1) {
         await cartRepo.removeFromCart(product.id, userId);
         emit(CartReady(allCartEntity));
       } else {
@@ -100,8 +106,8 @@ class CartCubit extends Cubit<CartState> {
   Future<void> deleteFromCart(ProductEntity product) async {
     final previousCart = allCartEntity;
 
-    allCartEntity =
-        allCartEntity.removeCartItem(CartItemEntity(product: product, count: 1));
+    allCartEntity = allCartEntity
+        .removeCartItem(CartItemEntity(product: product, count: 1));
 
     emit(CartSyncing(allCartEntity, productId: product.id));
 
