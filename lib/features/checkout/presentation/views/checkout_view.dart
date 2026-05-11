@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/features/checkout/domain/entities/step_entity.dart';
 import 'package:grocify/features/checkout/presentation/views/widgets/build_appbar.dart';
+import 'package:grocify/features/checkout/presentation/views/widgets/paying_section.dart';
 import 'package:grocify/features/checkout/presentation/views/widgets/step_tab_bar.dart';
 
 class CheckoutView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _CheckoutViewState extends State<CheckoutView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: buildAppBar(
         context,
         title: stepsEntities[currentIndex].title,
@@ -33,6 +35,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                 });
               },
             ),
+            PayingSection(),
           ],
         ),
       ),

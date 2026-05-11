@@ -139,6 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Login with Google",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "makeCardVirtual": MessageLookupByLibrary.simpleMessage(
+      "Make Card Virtual",
+    ),
     "makingAnAccount": MessageLookupByLibrary.simpleMessage(
       " By creating an account, you agree to our ",
     ),
@@ -178,8 +181,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "orderStatus": MessageLookupByLibrary.simpleMessage("Order Status"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "payPal": MessageLookupByLibrary.simpleMessage("PayPal"),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
-    "paymentMethod": MessageLookupByLibrary.simpleMessage("Payment Method"),
+    "paymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Please Select Payment Method",
+    ),
     "pc": MessageLookupByLibrary.simpleMessage("pc"),
     "petsSupplies": MessageLookupByLibrary.simpleMessage("Pets Supplies"),
     "placeOrder": MessageLookupByLibrary.simpleMessage("Place Order"),
@@ -213,6 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No account found with this email.",
     ),
     "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+    "visa": MessageLookupByLibrary.simpleMessage("VISA"),
     "weakPassword": MessageLookupByLibrary.simpleMessage(
       "The password provided is too weak.",
     ),

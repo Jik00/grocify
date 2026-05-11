@@ -819,14 +819,24 @@ class S {
     return Intl.message('Payment', name: 'payment', desc: '', args: []);
   }
 
-  /// `Payment Method`
+  /// `Please Select Payment Method`
   String get paymentMethod {
     return Intl.message(
-      'Payment Method',
+      'Please Select Payment Method',
       name: 'paymentMethod',
       desc: '',
       args: [],
     );
+  }
+
+  /// `PayPal`
+  String get payPal {
+    return Intl.message('PayPal', name: 'payPal', desc: '', args: []);
+  }
+
+  /// `VISA`
+  String get visa {
+    return Intl.message('VISA', name: 'visa', desc: '', args: []);
   }
 
   /// `Cash on Delivery`
@@ -857,6 +867,16 @@ class S {
   /// `Expiry Date`
   String get expiryDate {
     return Intl.message('Expiry Date', name: 'expiryDate', desc: '', args: []);
+  }
+
+  /// `Make Card Virtual`
+  String get makeCardVirtual {
+    return Intl.message(
+      'Make Card Virtual',
+      name: 'makeCardVirtual',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `CVV`
