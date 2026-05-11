@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocify/features/auth/presentation/views/signin_view.dart';
 import 'package:grocify/features/auth/presentation/views/signup_view.dart';
 import 'package:grocify/features/cart/presentation/views/cart_view.dart';
+import 'package:grocify/features/checkout/presentation/views/checkout_view.dart';
 import 'package:grocify/features/home/presentation/views/categories_view.dart';
 import 'package:grocify/features/home/presentation/views/home_view.dart';
 import 'package:grocify/features/home/presentation/views/main_layout.dart';
@@ -97,6 +98,12 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
     case CartView.routeName:
       return MaterialPageRoute(
         builder: (_) => const CartView(),
+        settings: settings,
+      );
+
+    case CheckoutView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const CheckoutView(),
         settings: settings,
       );
 

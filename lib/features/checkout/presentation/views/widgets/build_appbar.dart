@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 AppBar buildAppBar(BuildContext context, {required String title}) {
   return AppBar(
     backgroundColor: Colors.white,
+    foregroundColor: Colors.green,
     centerTitle: true,
     leading: GestureDetector(
       onTap: () {

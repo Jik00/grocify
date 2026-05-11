@@ -768,6 +768,171 @@ class S {
       args: [],
     );
   }
+
+  /// `Shipping`
+  String get shipping {
+    return Intl.message('Shipping', name: 'shipping', desc: '', args: []);
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message('Location', name: 'location', desc: '', args: []);
+  }
+
+  /// `Confirmation`
+  String get confirmation {
+    return Intl.message(
+      'Confirmation',
+      name: 'confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery`
+  String get delivery {
+    return Intl.message('Delivery', name: 'delivery', desc: '', args: []);
+  }
+
+  /// `Delivery Date`
+  String get deliveryDate {
+    return Intl.message(
+      'Delivery Date',
+      name: 'deliveryDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Time`
+  String get deliveryTime {
+    return Intl.message(
+      'Delivery Time',
+      name: 'deliveryTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message('Payment', name: 'payment', desc: '', args: []);
+  }
+
+  /// `Payment Method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment Method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on Delivery`
+  String get cashOnDelivery {
+    return Intl.message(
+      'Cash on Delivery',
+      name: 'cashOnDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Card`
+  String get creditCard {
+    return Intl.message('Credit Card', name: 'creditCard', desc: '', args: []);
+  }
+
+  /// `Card Number`
+  String get cardNumber {
+    return Intl.message('Card Number', name: 'cardNumber', desc: '', args: []);
+  }
+
+  /// `Card Holder`
+  String get cardHolder {
+    return Intl.message('Card Holder', name: 'cardHolder', desc: '', args: []);
+  }
+
+  /// `Expiry Date`
+  String get expiryDate {
+    return Intl.message('Expiry Date', name: 'expiryDate', desc: '', args: []);
+  }
+
+  /// `CVV`
+  String get cvv {
+    return Intl.message('CVV', name: 'cvv', desc: '', args: []);
+  }
+
+  /// `Place Order`
+  String get placeOrder {
+    return Intl.message('Place Order', name: 'placeOrder', desc: '', args: []);
+  }
+
+  /// `Order Placed`
+  String get orderPlaced {
+    return Intl.message(
+      'Order Placed',
+      name: 'orderPlaced',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Placed Successfully`
+  String get orderPlacedSuccessfully {
+    return Intl.message(
+      'Order Placed Successfully',
+      name: 'orderPlacedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Number`
+  String get orderNumber {
+    return Intl.message(
+      'Order Number',
+      name: 'orderNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Date`
+  String get orderDate {
+    return Intl.message('Order Date', name: 'orderDate', desc: '', args: []);
+  }
+
+  /// `Order Status`
+  String get orderStatus {
+    return Intl.message(
+      'Order Status',
+      name: 'orderStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Delivered`
+  String get orderDelivered {
+    return Intl.message(
+      'Order Delivered',
+      name: 'orderDelivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Cancelled`
+  String get orderCancelled {
+    return Intl.message(
+      'Order Cancelled',
+      name: 'orderCancelled',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
