@@ -14,7 +14,7 @@ class _ShippingSectionState extends State<ShippingSection> {
   bool option1 = false, option2 = false;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SingleChildScrollView(
       child: Column(
         children: [
           GestureDetector(

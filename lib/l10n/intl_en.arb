@@ -118,6 +118,7 @@
   "placeOrder": "Place Order",
   "orderPlaced": "Order Placed",
   "orderPlacedSuccessfully": "Order Placed Successfully",
+  "next" : "Next",
   "orderNumber": "Order Number",
   "orderDate": "Order Date",
   "orderStatus": "Order Status",

@@ -150,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No internet connection.",
     ),
     "newMember": MessageLookupByLibrary.simpleMessage("New Member"),
+    "next": MessageLookupByLibrary.simpleMessage("Next"),
     "noAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),

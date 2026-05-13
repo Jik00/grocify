@@ -29,40 +29,38 @@ class _OrderSuccessState extends State<OrderSuccess>
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          SizedBox(height: 20.h),
-          LottieBuilder.asset(
-            kCheckoutLottie,
-            width: 300.w,
-            height: 300.h,
-            controller: _controller,
-            onLoaded: (composition) {
-              _controller
-                ..duration = composition.duration
-                ..forward().whenComplete(() {
-                  _controller.value = 0.842;
-                });
-            },
+    return Column(
+      children: [
+        SizedBox(height: 20.h),
+        LottieBuilder.asset(
+          kCheckoutLottie,
+          width: 300.w,
+          height: 300.h,
+          controller: _controller,
+          onLoaded: (composition) {
+            _controller
+              ..duration = composition.duration
+              ..forward().whenComplete(() {
+                _controller.value = 0.842;
+              });
+          },
+        ),
+        Text(
+          "${S.current.orderPlacedSuccessfully} !",
+          style: TextStyle(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.bold,
           ),
-          Text(
-            "${S.current.orderPlacedSuccessfully} !",
-            style: TextStyle(
-              fontSize: 18.sp,
-              fontWeight: FontWeight.bold,
-            ),
+        ),
+        SizedBox(height: 10.h),
+        Text(
+          "${S.current.orderNumber}: #123456789",
+          style: TextStyle(
+            fontSize: 14.sp,
+            color: Colors.grey,
           ),
-          SizedBox(height: 10.h),
-          Text(
-            "${S.current.orderNumber}: #123456789",
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: Colors.grey,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

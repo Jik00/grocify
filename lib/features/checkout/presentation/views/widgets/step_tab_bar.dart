@@ -4,17 +4,15 @@ import 'package:grocify/features/checkout/domain/entities/step_entity.dart';
 import 'package:grocify/features/checkout/presentation/views/widgets/step_item.dart';
 
 class StepTabBar extends StatefulWidget {
-  const StepTabBar({super.key, required this.onItemTapped});
+  const StepTabBar({super.key, required this.selectedIndex});
 
-  final ValueChanged<int> onItemTapped;
+  final int selectedIndex;
 
   @override
   State<StepTabBar> createState() => _StepTabBarState();
 }
 
 class _StepTabBarState extends State<StepTabBar> {
-  int selectedIndex = 0;
-
   final ScrollController _scrollController = ScrollController();
 
   // Keep a GlobalKey for each item to measure its position
@@ -55,26 +53,19 @@ class _StepTabBarState extends State<StepTabBar> {
           children: stepsEntities.asMap().entries.map((e) {
             var index = e.key;
             var entity = e.value;
-
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                  widget.onItemTapped(index);
-                  _scrollToItem(index);
-                });
-              },
-              child: Row(
-                key: _itemKeys[index],
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  StepItem(
-                    isSelected: selectedIndex >= index,
-                    step: entity,
-                  ),
-                  SizedBox(width: 24.w),
-                ],
-              ),
+            if (index <= widget.selectedIndex) {
+              _scrollToItem(index);
+            }
+            return Row(
+              key: _itemKeys[index],
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                StepItem(
+                  isSelected: widget.selectedIndex >= index,
+                  step: entity,
+                ),
+                SizedBox(width: 24.w),
+              ],
             );
           }).toList(),
         ),
