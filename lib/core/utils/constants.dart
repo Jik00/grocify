@@ -8,6 +8,7 @@ const String kWhiteRec = 'white_rectangle';
 
 /// lottie ///
 const String kLoadingLottie = 'assets/images/lottie/LoadingFruits.json';
+const String kCheckoutLottie = 'assets/images/lottie/check_mark.json';
 
 /// supa ///
 const String kSupabaseUrl = 'https://chqxegpmpbzillazikzj.supabase.co';
@@ -21,3 +22,7 @@ const String kProductIdQuery = "product_id";
 const String kQuantityQuery = "quantity";
 
 const String kHiveProfilesBox = 'profiles';
+
+/// map ///
+const String  kUrlTemplate = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const String kPackageName = 'com.example.grocify';

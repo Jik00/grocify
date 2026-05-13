@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocify/features/checkout/presentation/views/widgets/card_form.dart';
+import 'package:grocify/features/checkout/presentation/views/widgets/credit_card_form.dart';
 import 'package:grocify/features/checkout/presentation/views/widgets/payment_method.dart';
 import 'package:grocify/generated/l10n.dart';
 
@@ -87,7 +87,7 @@ class _PayingSectionState extends State<PayingSection> {
 
           SizedBox(height: 18.h),
 
-          CardForm(),
+          CreditCardForm(),
 
           /// Virtual Card Checkbox
           Row(

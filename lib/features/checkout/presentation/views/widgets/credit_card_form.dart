@@ -3,20 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/widgets/custom_form_textfield.dart';
 import 'package:grocify/generated/l10n.dart';
 
-class CardForm extends StatefulWidget {
-  const CardForm({super.key});
+class CreditCardForm extends StatefulWidget {
+  const CreditCardForm({super.key});
 
   @override
-  State<CardForm> createState() => _CardFormState();
+  State<CreditCardForm> createState() => _CreditCardFormState();
 }
 
-
-
-class _CardFormState extends State<CardForm> {
-
+class _CreditCardFormState extends State<CreditCardForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late String cardHolder, cardNumber, expiryDate, cvv; 
-
+  late String cardHolder, cardNumber, expiryDate, cvv;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +20,7 @@ class _CardFormState extends State<CardForm> {
       key: _formKey,
       child: Column(
         children: [
-                    CustomFormTextfield(
+          CustomFormTextfield(
             hintText: S.current.cardHolder,
             textInputType: TextInputType.name,
             onSaved: (value) => cardHolder = value!,
@@ -51,6 +47,7 @@ class _CardFormState extends State<CardForm> {
               Expanded(
                 child: CustomFormTextfield(
                   hintText: S.current.cvv,
+                  obscure: true,
                   textInputType: TextInputType.number,
                   onSaved: (value) => cvv = value!,
                 ),

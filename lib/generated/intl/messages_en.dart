@@ -68,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enjoy our velvety 70% cocoa galaxy dark chocolate. Packed full with chocolatey richness that melts in your mouth with its buttery texture. Made with no added compounds or vegetable fats",
     ),
     "discount": MessageLookupByLibrary.simpleMessage("Discount"),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "eggCheeseColdcuts": MessageLookupByLibrary.simpleMessage(
       "Egg, Cheese & Cold Cuts",
     ),
@@ -180,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Order Placed Successfully",
     ),
     "orderStatus": MessageLookupByLibrary.simpleMessage("Order Status"),
+    "orderSummary": MessageLookupByLibrary.simpleMessage("Order Summary"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "payPal": MessageLookupByLibrary.simpleMessage("PayPal"),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
@@ -209,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "shipping": MessageLookupByLibrary.simpleMessage("Shipping"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "snacks": MessageLookupByLibrary.simpleMessage("Snacks"),
+    "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
     "system": MessageLookupByLibrary.simpleMessage("System"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
       "Terms & Conditions",

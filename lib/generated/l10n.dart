@@ -729,6 +729,16 @@ class S {
     );
   }
 
+  /// `Subtotal`
+  String get subtotal {
+    return Intl.message('Subtotal', name: 'subtotal', desc: '', args: []);
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
   /// `Total`
   String get total {
     return Intl.message('Total', name: 'total', desc: '', args: []);
@@ -837,6 +847,16 @@ class S {
   /// `VISA`
   String get visa {
     return Intl.message('VISA', name: 'visa', desc: '', args: []);
+  }
+
+  /// `Order Summary`
+  String get orderSummary {
+    return Intl.message(
+      'Order Summary',
+      name: 'orderSummary',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Cash on Delivery`
