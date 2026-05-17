@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/utils/app_colors.dart';
+import 'package:grocify/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import 'package:grocify/features/checkout/domain/entities/order_entity.dart';
 import 'package:grocify/features/checkout/presentation/views/widgets/edit_button.dart';
 import 'package:grocify/generated/l10n.dart';
 
@@ -28,13 +31,14 @@ class OrderSummary extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _priceRow(S.current.subtotal, "\$ 180"),
+                _priceRow(S.current.subtotal,
+                    "\$ ${context.watch<CartCubit>().allCartEntity.calculateTotal().toStringAsFixed(2)}"),
                 SizedBox(height: 16.h),
                 _priceRow(S.current.delivery, "\$ 20"),
                 Divider(height: 28.h),
                 _priceRow(
                   S.current.total,
-                  "\$ 200",
+                  "\$ ${(context.watch<CartCubit>().allCartEntity.calculateTotal() + 20).toStringAsFixed(2)}",
                   isBold: true,
                 ),
               ],
@@ -63,53 +67,62 @@ class OrderSummary extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 14.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 65.w,
-                      height: 45.h,
-                      child: Container(
-                        height: 60.h,
-                        decoration: BoxDecoration(
-                          color: const Color(0xff1434CB),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: Colors.blueGrey.withAlpha(140),
-                          ),
+                (context.watch<OrderEntity>().payWithCash == true)
+                    ? Text(
+                        S.current.cashOnDelivery,
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
                         ),
-                        child: Center(
-                          child: Text(
-                            S.current.visa,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 65.w,
+                            height: 45.h,
+                            child: Container(
+                              height: 60.h,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff1434CB),
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: Colors.blueGrey.withAlpha(140),
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  S.current.visa,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          SizedBox(width: 14.w),
+                          Text(
+                            "**** **** **** ",
+                            style: TextStyle(
+                              fontSize: 30.sp,
+                              color: Colors.black87.withAlpha(160),
+                            ),
+                          ),
+                          Transform.translate(
+                            offset: Offset(0, -2.h),
+                            child: Text(
+                              "6522",
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                color: Colors.black87.withAlpha(160),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(width: 14.w),
-                    Text(
-                      "**** **** **** ",
-                      style: TextStyle(
-                        fontSize: 30.sp,
-                        color: Colors.black87.withAlpha(160),
-                      ),
-                    ),
-                    Transform.translate(
-                      offset: Offset(0, -2.h),
-                      child: Text(
-                        "6522",
-                        style: TextStyle(
-                          fontSize: 20.sp,
-                          color: Colors.black87.withAlpha(160),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                SizedBox(height: 12.h),
               ],
             ),
           ),

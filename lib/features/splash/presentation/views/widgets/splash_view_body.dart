@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocify/core/services/get_it_service.dart';
 import 'package:grocify/core/utils/app_images.dart';
 import 'package:grocify/features/auth/presentation/manger/auth_controller/auth_controller.dart';
-import 'package:grocify/features/checkout/presentation/views/checkout_view.dart';
 import 'package:grocify/features/splash/presentation/manager/splash_nav_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -73,7 +72,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     final nextRoute = await manager.determineNextRoute();
 
     if (mounted) {
-      Navigator.pushReplacementNamed(context, CheckoutView.routeName);
+      Navigator.pushReplacementNamed(context, nextRoute);
     }
   }
 

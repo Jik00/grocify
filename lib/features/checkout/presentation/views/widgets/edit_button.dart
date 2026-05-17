@@ -7,19 +7,24 @@ class EditButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        return Row(
-      children: [
-        Icon(Icons.edit_outlined, size: 18.sp, color: Colors.grey),
-        SizedBox(width: 4),
-        Text(
-          S.current.edit,
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 14,
-            decoration: TextDecoration.underline,
+      return GestureDetector(
+        onTap: () {
+          
+        },
+        child: Row(
+        children: [
+          Icon(Icons.edit_outlined, size: 18.sp, color: Colors.grey),
+          SizedBox(width: 4),
+          Text(
+            S.current.edit,
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 14,
+              decoration: TextDecoration.underline,
+            ),
           ),
-        ),
-      ],
-    );
+        ],
+            ),
+      );
   }
 }
